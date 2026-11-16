@@ -42,7 +42,7 @@ Functional requirements describe what the pipeline does. Non-functional requirem
 | ID | Requirement |
 |---|---|
 | TR-1 | Python 3.14 in the conda environment `hn1-8-ai`, built from the conda-forge channel only. |
-| TR-2 | pandas, scikit-learn, NumPy, SciPy, matplotlib and joblib at the exact versions pinned in `requirements.txt` and `../fastapi/requirements.txt`. |
+| TR-2 | pandas, scikit-learn, NumPy, SciPy, matplotlib, joblib and emoji at the exact versions pinned in `requirements.txt` and `../fastapi/requirements.txt`. |
 | TR-3 | Models are saved as joblib pipelines with a JSON manifest; datasets as UTF-8 CSV. |
 | TR-4 | The pipeline runs offline on a laptop CPU; no GPU or paid service is needed. |
 
@@ -95,7 +95,7 @@ This one command:
 3. deduplicates across sources using Unicode NFKC, casefolding and collapsed whitespace, and quarantines groups whose labels disagree;
 4. splits 70/15/15 with a fixed seed (42), stratified by label and source origin;
 5. writes the processed datasets to `ai/data/processed/combined-sms-seed-42/` (`train.csv`, `validation.csv`, `test.csv`, quality report, lineage, provenance);
-6. tries 4 Naive Bayes and 6 logistic regression candidates on TF-IDF features (Manning, Raghavan and Schütze, 2008) built with scikit-learn (Pedregosa et al., 2011), selects each family's best candidate and decision threshold on validation spam F1, then selects KMeans clustering (k = 2, 4, 6) by validation silhouette (Rousseeuw, 1987);
+6. replaces each emoji in the model input with the word `emoji` and its English name (see [Emoji handling](#emoji-handling)), then tries 4 Naive Bayes and 6 logistic regression candidates on TF-IDF features (Manning, Raghavan and Schütze, 2008) built with scikit-learn (Pedregosa et al., 2011), selects each family's best candidate and decision threshold on validation spam F1, then selects KMeans clustering (k = 2, 4, 6) by validation silhouette (Rousseeuw, 1987);
 7. freezes all selections in `selection-decision.json`, and only then evaluates both classifiers once on the test partition.
 
 The output directory must not already exist. Releases are immutable, so a new run never overwrites a previous result. Use `--seed` for a different split and `--data-dir` for a different data folder.
@@ -111,7 +111,7 @@ python -m ai.extra_experiments --release fastapi/artifacts/my-release
 
 - retained messages by origin and label;
 - message length distributions, with a Mann-Whitney U test (Mann and Whitney, 1947);
-- URL, phone, currency and email indicator rates by subtype, with chi-square tests of independence;
+- URL, phone, currency, email and emoji indicator rates by subtype, with chi-square tests of independence, plus emoji counts per subtype;
 - the most frequent tokens for ham, spam and smishing;
 - agreement between the published Mendeley attributes and this project's regular-expression extractors.
 
@@ -132,14 +132,23 @@ python -m ai.predict "URGENT! Your parcel is on hold, pay the fee at bit.ly/xyz"
 python -m ai.predict --release fastapi/artifacts/my-release --model logistic_regression "Claim your free prize now"
 ```
 
-Each message prints one JSON line with the label, spam score and decision threshold. A message with no known vocabulary returns `unable_to_assess` instead of a guess. The default release is `fastapi/artifacts/current`; `--model` accepts `primary`, `naive_bayes` or `logistic_regression`. The pipeline file is checked against its manifest hash before loading.
+Each message prints one JSON line with the label, spam score, decision threshold, the emoji found in the message with their English names, and whether the release reads them (`emoji_handling`). A message with no known vocabulary returns `unable_to_assess` instead of a guess. The default release is `fastapi/artifacts/current`; `--model` accepts `primary`, `naive_bayes` or `logistic_regression`. The pipeline file is checked against its manifest hash before loading.
+
+## Emoji handling
+
+scikit-learn's default token pattern `(?u)\b\w\w+\b` keeps only letters, digits and underscores, so earlier releases dropped every emoji: `You won a 🎁` scored exactly like `You won a`, and a message made only of emoji could not be assessed. `emoji_text.py` now converts each emoji into words before the vectorizer sees the text. `🎁` becomes `emoji wrapped gift`, `💰` becomes `emoji money bag` and `🆓` becomes `emoji FREE button`. The names are the Unicode CLDR English names supplied by the pinned `emoji` library. Skin-tone modifiers are dropped from the name, and family, flag and keycap sequences count as one emoji. Plain ©, ® and ™ are treated as brand typography unless written with the emoji variation selector.
+
+Two effects follow. An emoji reuses the weight the model already learned for the words in its name, such as *gift*, *free*, *money* and *phone*. And when the training data contains emoji, the model also learns the marker word `emoji` itself. Text without emoji is passed through unchanged, so emoji-free messages get exactly the same features as before. The same step runs during training, evaluation, clustering, the command-line predictor and the API. Releases record it as `preprocessing_version: tfidf-word-emoji-v1` together with the `emoji` library version. The API applies the step that matches each release and refuses unknown versions.
+
+The 2011 UCI messages contain few or no emoji. The Mendeley messages were converted from screenshots, and emoji there may have become replacement characters, so the learned weight of an emoji comes mostly from the words in its name. `python -m ai.analysis` reports how many training messages contain emoji (`emoji_rows`, `emoji_total` in `eda-summary.json`).
 
 ## Modules
 
 | Module | Responsibility |
 |---|---|
 | `data.py` | UCI download and parsing, deduplication helpers, stratified split, frozen CSV/JSON exports |
-| `sources.py` | Mendeley download and parsing, cross-source merge, engineered text features |
+| `sources.py` | Mendeley download and parsing, cross-source merge, engineered text features (including emoji count) |
+| `emoji_text.py` | Emoji detection and emoji-to-words normalization; a byte-identical copy lives in `../fastapi/app/emoji_text.py` for serving |
 | `experiments.py` | Naive Bayes and logistic regression candidates and threshold search |
 | `clustering.py` | TF-IDF, SVD and KMeans candidates, silhouette and stability selection, 2D projection |
 | `metrics.py` | Spam-positive metrics, undefined denominators, abstention reporting |
@@ -153,7 +162,7 @@ To build the submission archive: `python -m ai.package_submission --output ../..
 
 ## Results of the current release
 
-Release `sms-b5d453f438-2226ac7c49-714333`, trained on 4,272 messages, validated on 916 and tested on 916:
+Release `sms-b5d453f438-2226ac7c49-714333`, trained on 4,272 messages, validated on 916 and tested on 916. It predates emoji handling (`preprocessing_version: tfidf-word-v1`), so it ignores emoji until a retrained release is switched in and this table is updated:
 
 | Model | Threshold | Test precision | Test recall | Test F1 | ROC AUC |
 |---|---|---|---|---|---|
@@ -168,6 +177,7 @@ Training on both datasets raised Naive Bayes spam recall on unseen Mendeley-only
 - Exact deduplication does not remove near-duplicate templates.
 - The Mendeley text was converted from images and contains replacement characters in 145 messages.
 - The data is English SMS from 2011 and 2022. Other languages, email and malware files are out of scope.
+- Emoji are read through their English names; the corpora contain few emoji, so their learned weight is mostly borrowed from those words. Text emoticons such as `:)` are not converted.
 - Scores are uncalibrated and are not a safety guarantee.
 - Timings and binary hashes can differ between machines and library versions.
 

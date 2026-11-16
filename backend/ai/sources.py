@@ -8,6 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from ai.data import MAX_DOWNLOAD_BYTES, download_source, duplicate_key, sha256_bytes, timestamp, write_json
+from ai.emoji_text import find_emojis
 
 
 MENDELEY_URL = "https://data.mendeley.com/public-files/datasets/f45bkkt8pr/files/edb361de-918d-469f-9106-e84823830665/file_downloaded"
@@ -108,6 +109,7 @@ def parse_mendeley(payload):
 
 
 def text_features(text):
+    emoji_count = len(find_emojis(text))
     return {
         "length": len(text),
         "word_count": len(text.split()),
@@ -118,6 +120,8 @@ def text_features(text):
         "has_phone": bool(PHONE_PATTERN.search(text)),
         "has_currency": bool(CURRENCY_PATTERN.search(text)),
         "exclamation_count": text.count("!"),
+        "has_emoji": emoji_count > 0,
+        "emoji_count": emoji_count,
         "replacement_characters": text.count("�"),
     }
 
