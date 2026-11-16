@@ -25,11 +25,12 @@ from sklearn.tree import DecisionTreeClassifier
 
 from ai.analysis import COLORS, load_prepared, save
 from ai.data import SEED, write_json
+from ai.emoji_text import LEGACY_PREPROCESSING_VERSION, model_input
 from ai.metrics import classification_metrics
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FEATURE_COLUMNS = ["length", "word_count", "digit_ratio", "uppercase_ratio", "has_url", "has_email", "has_phone", "has_currency", "exclamation_count"]
+FEATURE_COLUMNS = ["length", "word_count", "digit_ratio", "uppercase_ratio", "has_url", "has_email", "has_phone", "has_currency", "exclamation_count", "emoji_count"]
 
 
 def tfidf():
@@ -50,8 +51,8 @@ def engineered(frame, scaler=None):
 
 def classifier_comparison(train, validation, seed):
     vectorizer = tfidf()
-    train_text = vectorizer.fit_transform(train["text"])
-    validation_text = vectorizer.transform(validation["text"])
+    train_text = vectorizer.fit_transform(train["model_text"])
+    validation_text = vectorizer.transform(validation["model_text"])
     train_features, scaler = engineered(train)
     validation_features, _ = engineered(validation, scaler)
     train_both = hstack([train_text, csr_matrix(train_features)]).tocsr()
@@ -84,9 +85,9 @@ def cross_source(train, validation, seed):
     for training_name, training in (("UCI only", uci_train), ("UCI + Mendeley", train)):
         for model_name, model in (("Naive Bayes", MultinomialNB(alpha=0.5)), ("Logistic regression", LogisticRegression(C=2.0, max_iter=2000, solver="liblinear", random_state=seed))):
             vectorizer = tfidf()
-            model.fit(vectorizer.fit_transform(training["text"]), training["label"])
+            model.fit(vectorizer.fit_transform(training["model_text"]), training["label"])
             for target_name, target in targets.items():
-                predictions = model.predict(vectorizer.transform(target["text"]))
+                predictions = model.predict(vectorizer.transform(target["model_text"]))
                 results.append({"training_data": training_name, "training_rows": int(len(training)), "model": model_name, "evaluated_on": target_name, "evaluated_rows": int(len(target)), **binary_metrics(target["label"], predictions)})
     return results
 
@@ -96,8 +97,8 @@ def subtype_task(train, validation, seed):
     fit = train[train["subtype"].isin(keep)]
     check = validation[validation["subtype"].isin(keep)]
     vectorizer = tfidf()
-    train_x = vectorizer.fit_transform(fit["text"])
-    check_x = vectorizer.transform(check["text"])
+    train_x = vectorizer.fit_transform(fit["model_text"])
+    check_x = vectorizer.transform(check["model_text"])
     results = []
     for name, model in (("Logistic regression", LogisticRegression(C=2.0, max_iter=2000, solver="liblinear", random_state=seed)), ("Random forest", RandomForestClassifier(n_estimators=300, random_state=seed, n_jobs=1))):
         model.fit(train_x, fit["subtype"])
@@ -120,8 +121,8 @@ def clustering(train, validation, seed, figures):
     vectorizer = tfidf()
     reducer = TruncatedSVD(n_components=100, random_state=seed)
     normalizer = Normalizer()
-    train_x = normalizer.fit_transform(reducer.fit_transform(vectorizer.fit_transform(train["text"])))
-    validation_x = normalizer.transform(reducer.transform(vectorizer.transform(validation["text"])))
+    train_x = normalizer.fit_transform(reducer.fit_transform(vectorizer.fit_transform(train["model_text"])))
+    validation_x = normalizer.transform(reducer.transform(vectorizer.transform(validation["model_text"])))
     labels = (validation["label"] == "spam").astype(int).to_numpy()
     kmeans = []
     for k in range(2, 11):
@@ -172,7 +173,9 @@ def release_figures(release, test, figures):
     for index, (model_id, title) in enumerate((("naive_bayes", "Naive Bayes"), ("logistic_regression", "Logistic regression"))):
         pipeline = joblib.load(release / model_id / "pipeline.joblib")
         evaluation = json.loads((release / model_id / "evaluation.json").read_text(encoding="utf-8"))
-        scores = pipeline.predict_proba(test["text"])[:, list(pipeline.classes_).index("spam")]
+        manifest = json.loads((release / model_id / "model-manifest.json").read_text(encoding="utf-8"))
+        preprocessing = manifest.get("preprocessing_version", LEGACY_PREPROCESSING_VERSION)
+        scores = pipeline.predict_proba([model_input(text, preprocessing) for text in test["text"]])[:, list(pipeline.classes_).index("spam")]
         fpr, tpr, _ = roc_curve(truth, scores)
         precision, recall, _ = precision_recall_curve(truth, scores)
         curves[model_id] = {"roc_auc": float(auc(fpr, tpr)), "pr_auc": float(auc(recall, precision)), "threshold": evaluation["decision_threshold"]}

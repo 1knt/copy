@@ -91,6 +91,7 @@ class ModelResponse(BaseModel):
     language: str = "English"
     threshold: float
     feature_family: str = "TF-IDF word features"
+    emoji_handling: Literal["read_as_words", "ignored"]
     label_meanings: dict[str, str]
     limitations: list[str]
     release_id: str
