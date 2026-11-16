@@ -6,7 +6,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
-from ai.emoji_text import text_for_model
 from ai.metrics import evaluate_scores, metric_rank, score_model
 
 
@@ -15,9 +14,9 @@ def features(ngram_range):
 
 
 def select_classifiers(partitions, seed):
-    train_text = [text_for_model(row["text"]) for row in partitions["train"]]
+    train_text = [row["text"] for row in partitions["train"]]
     train_labels = [row["label"] for row in partitions["train"]]
-    validation_text = [text_for_model(row["text"]) for row in partitions["validation"]]
+    validation_text = [row["text"] for row in partitions["validation"]]
     validation_labels = [row["label"] for row in partitions["validation"]]
     selected = {}
     experiments = []

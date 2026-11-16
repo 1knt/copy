@@ -6,12 +6,10 @@ from sklearn.metrics import adjusted_rand_score, silhouette_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import Normalizer
 
-from ai.emoji_text import text_for_model
-
 
 def select_clustering(partitions, seed):
-    train_text = [text_for_model(row["text"]) for row in partitions["train"]]
-    validation_text = [text_for_model(row["text"]) for row in partitions["validation"]]
+    train_text = [row["text"] for row in partitions["train"]]
+    validation_text = [row["text"] for row in partitions["validation"]]
     vectorizer = TfidfVectorizer(ngram_range=(1, 2), min_df=2, max_features=20000)
     train_features = vectorizer.fit_transform(train_text)
     dimension = min(100, train_features.shape[0] - 1, train_features.shape[1] - 1)
@@ -44,7 +42,7 @@ def select_clustering(partitions, seed):
 
 
 def export_clusters(pipeline, projection, rows, release_id, split_id, seed):
-    texts = [text_for_model(row["text"]) for row in rows]
+    texts = [row["text"] for row in rows]
     features = pipeline.named_steps["tfidf"].transform(texts)
     reduced = pipeline.named_steps["normalize"].transform(pipeline.named_steps["svd"].transform(features))
     clusters = pipeline.named_steps["clusterer"].predict(reduced)

@@ -4,7 +4,7 @@ from threading import BoundedSemaphore
 import numpy as np
 
 from .artifacts import MODEL_IDS, Release
-from .emoji_text import PREPROCESSING_VERSION, model_input
+from .emoji_text import text_for_model
 from .errors import ServiceError
 from .schemas import (
     ClustersResponse, ComparisonResponse, ComparisonResult, DatasetSummaryResponse,
@@ -19,7 +19,7 @@ LENGTH_EDGES = [0, 40, 80, 120, 160, 320, 640, 1280, 2000, 1000001]
 def infer(model, text, request_id):
     vectorizer = model.pipeline.named_steps["tfidf"]
     classifier = model.pipeline.named_steps["classifier"]
-    features = vectorizer.transform([model_input(text, model.preprocessing_version)])
+    features = vectorizer.transform([text_for_model(text)])
     if features.nnz == 0:
         return PredictionResponse(request_id=request_id, status="unable_to_assess", label=None,
                                   spam_score=None, threshold=model.threshold, model_version=model.version,
@@ -66,18 +66,14 @@ class ReleaseService:
 
     def metadata(self, model_id):
         model = self.resolve(model_id)
-        reads_emoji = model.preprocessing_version == PREPROCESSING_VERSION
         return ModelResponse(model_id=model.model_id, model_version=model.version, threshold=model.threshold,
                              positive_label=model.evaluation.positive_label,
                              release_id=self.release.release_id,
-                             emoji_handling="read_as_words" if reads_emoji else "ignored",
                              label_meanings={"ham": "Likely legitimate", "spam": "Likely spam"},
                              limitations=["Scores are model estimates, not verified safety probabilities.",
                                           "Evaluated on an historical English SMS corpus; other languages and domains are outside the validated scope.",
                                           "A ham classification is not a malware verdict.",
-                                          "Messages with no recognized features receive no classification.",
-                                          "Emoji are read through their English names; the training corpora contain few emoji, so an emoji mostly borrows the weight of the words in its name."
-                                          if reads_emoji else "This release ignores emoji; they do not change its score."])
+                                          "Messages with no recognized features receive no classification."])
 
     def summary(self, source, split, model_id, actual_class):
         release = self.require_release("DATA_UNAVAILABLE")

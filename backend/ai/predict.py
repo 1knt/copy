@@ -6,7 +6,7 @@ from pathlib import Path
 import joblib
 
 from ai.data import sha256_file
-from ai.emoji_text import LEGACY_PREPROCESSING_VERSION, PREPROCESSING_VERSION, PREPROCESSING_VERSIONS, find_emojis, model_input
+from ai.emoji_text import text_for_model
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,26 +24,21 @@ def load_model(release, model_id):
     pipeline_path = release / model_id / "pipeline.joblib"
     if sha256_file(pipeline_path) != manifest["pipeline_sha256"]:
         raise ValueError("Pipeline checksum differs from its manifest; refusing to load it.")
-    preprocessing = manifest.get("preprocessing_version", LEGACY_PREPROCESSING_VERSION)
-    if preprocessing not in PREPROCESSING_VERSIONS:
-        raise ValueError(f"Unknown preprocessing version {preprocessing!r}; this code cannot reproduce the release's input.")
-    return model_id, joblib.load(pipeline_path), manifest["decision_threshold"], preprocessing
+    return model_id, joblib.load(pipeline_path), manifest["decision_threshold"]
 
 
 def predict(texts, release, model_id="primary"):
-    model_id, pipeline, threshold, preprocessing = load_model(release, model_id)
+    model_id, pipeline, threshold = load_model(release, model_id)
     vectorizer = pipeline.named_steps["tfidf"]
     classifier = pipeline.named_steps["classifier"]
-    features = vectorizer.transform([model_input(text, preprocessing) for text in texts])
+    features = vectorizer.transform([text_for_model(text) for text in texts])
     scores = classifier.predict_proba(features)[:, list(classifier.classes_).index("spam")]
-    emoji_handling = "read_as_words" if preprocessing == PREPROCESSING_VERSION else "ignored"
     results = []
     for text, score, recognized in zip(texts, scores, features.getnnz(axis=1) > 0):
-        common = {"characters": len(text), "emojis": find_emojis(text), "emoji_handling": emoji_handling}
         if not recognized:
-            results.append({"model_id": model_id, "label": None, "spam_score": None, "status": "unable_to_assess", **common})
+            results.append({"model_id": model_id, "label": None, "spam_score": None, "status": "unable_to_assess", "characters": len(text)})
         else:
-            results.append({"model_id": model_id, "label": "spam" if score >= threshold else "ham", "spam_score": round(float(score), 4), "threshold": threshold, "status": "classified", **common})
+            results.append({"model_id": model_id, "label": "spam" if score >= threshold else "ham", "spam_score": round(float(score), 4), "threshold": threshold, "status": "classified", "characters": len(text)})
     return results
 
 

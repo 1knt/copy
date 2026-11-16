@@ -16,7 +16,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
-from .emoji_text import PREPROCESSING_VERSION, PREPROCESSING_VERSIONS, library_version as emoji_version
 from .schemas import EvaluationResponse
 
 
@@ -152,7 +151,6 @@ class LoadedModel:
     threshold: float
     pipeline: Pipeline
     evaluation: EvaluationResponse
-    preprocessing_version: str
 
 
 @dataclass(frozen=True)
@@ -182,9 +180,6 @@ def validate_manifest(value, model_id, release):
     require(isinstance(value["feature_configuration"], dict))
     require({"analyzer", "ngram_range", "min_df", "max_features", "lowercase", "token_pattern", "strip_accents", "norm", "sublinear_tf"}.issubset(value["feature_configuration"]))
     identifier(value["preprocessing_version"])
-    require(value["preprocessing_version"] in PREPROCESSING_VERSIONS)
-    if value["preprocessing_version"] == PREPROCESSING_VERSION:
-        require(versions.get("emoji") == emoji_version())
 
 
 def validate_pipeline(pipeline, model_id, manifest):
@@ -329,7 +324,7 @@ def load_release(root: Path):
         pipeline = joblib.load(io.BytesIO(pipeline_bytes))
         validate_pipeline(pipeline, model_id, manifest)
         evaluation = evaluation.model_copy(update={"positive_label": manifest["positive_label"]})
-        models[model_id] = LoadedModel(model_id, manifest["model_version"], manifest["decision_threshold"], pipeline, evaluation, manifest["preprocessing_version"])
+        models[model_id] = LoadedModel(model_id, manifest["model_version"], manifest["decision_threshold"], pipeline, evaluation)
     rows = validate_summary(values["dataset_summary"], release, models)
     assignments = split_manifest["assignments"]
     require(len(assignments) == len(rows))
