@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0f12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#edf0f1" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="An educational SMS spam screening project by COS30049 group HN1_8." />
+    <title>SMS Spam Screening · HN1_8</title>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-500-latin.woff2" crossorigin />
+    <script>
+      try {
+        var stored = localStorage.getItem('hn18.theme')
+        if (stored === 'light' || stored === 'dark') document.documentElement.dataset.theme = stored
+      } catch (error) {
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
