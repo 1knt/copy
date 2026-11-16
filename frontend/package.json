@@ -1,0 +1,33 @@
+{
+  "name": "hn1-8-spam-screening-frontend",
+  "version": "0.1.0",
+  "description": "React interface for the HN1_8 SMS spam screening application",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run --environment jsdom"
+  },
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "plotly.js-basic-dist-min": "4.1.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router-dom": "7.18.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.7",
+    "@types/node": "26.6.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "jsdom": "30.1.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "vitest": "5.0.1"
+  },
+  "private": true
+}
