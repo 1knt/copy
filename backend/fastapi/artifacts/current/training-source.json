@@ -1,0 +1,14 @@
+{
+  "files": {
+    "ai/__init__.py": "28eade8d2282f2df04b685bdf6b05bc66acbb8dc475c598b012493f900018853",
+    "ai/clustering.py": "da026444ce17b89cdbbb330e076808039455b3df8d26c3ce92a579cf64cb56cf",
+    "ai/data.py": "42b9733e5c3a784ba11cbd9101dfcec69d6f32d983a177a35c58df19d8de9a8d",
+    "ai/experiments.py": "16c7ea3c002e4db03faddd04b24be256a3d904c8e24449f8f151130c3e099d19",
+    "ai/metrics.py": "e2568dcebf2f6cc12ff553b85e4d28f2b5a88fffc63793f6fb23480b3417d933",
+    "ai/sources.py": "06d09bd0e16678bf429c1f6b8ca1d4d4ca1e650311e64e29574a6b4962445ff6",
+    "ai/train.py": "870ccb5581b281db99068e000de4980fd5622d13abef97b45ae1330864bc9baf"
+  },
+  "note": "The source hash records exact training modules, including any changes not yet committed at execution time.",
+  "source_revision": "ecaef22504de55d56231d08160137b8b33537f20",
+  "source_sha256": "b5d453f43839465f6f8a65bc59fe9cd180350d480d77a41e84e34188a8df771f"
+}

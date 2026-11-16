@@ -1,0 +1,40 @@
+{
+  "artifacts": {
+    "clustering_pipeline": {
+      "file": "clustering.joblib",
+      "sha256": "322772427285e781a0eac179b5251ec4d5487f360baa2480b767436dbb5817a6"
+    },
+    "clusters": {
+      "file": "cluster-visualization.json",
+      "sha256": "8ab569c8a63f9c0e7f409609f28d167e3a0e8fb5f2cec1fb6361184acc4dcb99"
+    },
+    "dataset_summary": {
+      "file": "dataset-summary.json",
+      "sha256": "22d421f2eb24e7ae8a46c1832e0ce805a8151716122ef8c9a6a5f07d77eaea44"
+    },
+    "projection": {
+      "file": "projection.joblib",
+      "sha256": "5369346bc6f42da27acea58e7920af05a50007739fe255355503ba16a94fd803"
+    }
+  },
+  "created_at": "2026-10-13T12:27:41.579964+00:00",
+  "dataset_id": "uci_sms_plus_mendeley_smishing",
+  "dataset_sha256": "0ff1c047bc5ff415390909dd2ad7ee94d6e07d1bd7a5d23218f4ef81f53775e0",
+  "models": {
+    "logistic_regression": {
+      "directory": "logistic_regression",
+      "manifest_sha256": "168b42596548eb5afd6e6b3a1d5ec5023bf1ce5f8c9424669ae289b15a15e5f2"
+    },
+    "naive_bayes": {
+      "directory": "naive_bayes",
+      "manifest_sha256": "5ac1aba9850c7404ac4c243fbbbfbd1c23a5e09b0e13f0e719698931d8902447"
+    }
+  },
+  "primary_model_id": "naive_bayes",
+  "release_id": "sms-b5d453f438-2226ac7c49-714333",
+  "schema_version": 1,
+  "selection_decision_sha256": "17cf35f6312cc7dcf030b8680a892e84ae887d1a97cec45c4998dfe3ea004b6d",
+  "split_id": "combined_sms_2226ac7c49f166b0",
+  "split_manifest_sha256": "2226ac7c49f166b01a143b7c549b24db56abe31129d25b166995bfc434be0ae1",
+  "training_seconds": 2.481541400004062
+}

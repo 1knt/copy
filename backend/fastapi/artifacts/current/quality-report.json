@@ -1,0 +1,50 @@
+{
+  "class_counts": {
+    "ham": 5041,
+    "spam": 1063
+  },
+  "conflicting_group_count": 0,
+  "conflicting_row_count": 0,
+  "cross_source_duplicates_removed": 5025,
+  "duplicate_normalization": "Unicode NFKC, casefold, collapsed whitespace across both sources; UCI rows are preferred as representatives",
+  "duplicate_rows_removed": 5441,
+  "invalid_count": 0,
+  "label_mapping": "Mendeley ham->ham; Mendeley spam and smishing->spam for the binary task; the smishing/spam subtype is retained separately",
+  "origin_counts": {
+    "mendeley_smishing": 945,
+    "uci_sms": 273,
+    "uci_sms+mendeley_smishing": 4886
+  },
+  "raw_count": 11545,
+  "rejected_rows": [],
+  "residual_risk": "Exact normalized deduplication does not remove semantic or templated near-duplicates, and OCR-derived Mendeley text contains replacement characters.",
+  "retained_count": 6104,
+  "sources": {
+    "mendeley_smishing": {
+      "invalid_count": 0,
+      "label_counts": {
+        "ham": 4844,
+        "smishing": 638,
+        "spam": 489
+      },
+      "parsed_count": 5971,
+      "raw_count": 5971
+    },
+    "uci_sms": {
+      "invalid_count": 0,
+      "label_counts": {
+        "ham": 4827,
+        "spam": 747
+      },
+      "parsed_count": 5574,
+      "raw_count": 5574
+    }
+  },
+  "subtype_counts": {
+    "ham": 5041,
+    "smishing": 528,
+    "spam": 435,
+    "unspecified": 100
+  },
+  "subtype_disagreement_groups": 34
+}

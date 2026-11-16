@@ -1,0 +1,9 @@
+name: hn1-8-ai
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.14
+  - pip
+  - pip:
+      - -r requirements.txt

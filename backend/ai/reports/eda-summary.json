@@ -1,0 +1,164 @@
+{
+  "extractor_agreement": {
+    "flags": {
+      "email": {
+        "agreement": 0.9986601909227935,
+        "both_positive": 17,
+        "detected_positive": 23,
+        "published_positive": 19
+      },
+      "phone": {
+        "agreement": 0.9688494389549489,
+        "both_positive": 684,
+        "detected_positive": 710,
+        "published_positive": 844
+      },
+      "url": {
+        "agreement": 0.9902863841902529,
+        "both_positive": 202,
+        "detected_positive": 255,
+        "published_positive": 207
+      }
+    },
+    "note": "Agreement between the published Mendeley URL/EMAIL/PHONE attributes and this project's regular-expression extractors.",
+    "rows": 5971
+  },
+  "indicators": {
+    "chi_square_label_independence": {
+      "has_currency": {
+        "chi2": 998.598305111106,
+        "p_value": 3.6219633770583715e-219
+      },
+      "has_email": {
+        "chi2": 64.56424995380054,
+        "p_value": 9.343534875023303e-16
+      },
+      "has_phone": {
+        "chi2": 2253.7051545158874,
+        "p_value": 0.0
+      },
+      "has_url": {
+        "chi2": 681.5011774646359,
+        "p_value": 3.1511670302680426e-150
+      }
+    },
+    "rates_percent": {
+      "ham": {
+        "has_currency": 0.71,
+        "has_email": 0.03,
+        "has_phone": 0.23,
+        "has_url": 0.34
+      },
+      "smishing": {
+        "has_currency": 35.09,
+        "has_email": 2.37,
+        "has_phone": 77.31,
+        "has_url": 18.47
+      },
+      "spam": {
+        "has_currency": 27.09,
+        "has_email": 2.01,
+        "has_phone": 35.79,
+        "has_url": 23.41
+      }
+    }
+  },
+  "label_counts": {
+    "ham": 5041,
+    "spam": 1063
+  },
+  "length": {
+    "mann_whitney_spam_longer": {
+      "p_value": 1.087978224163918e-224,
+      "statistic": 2290025.5
+    },
+    "mean_length": {
+      "ham": 71.40787981859411,
+      "spam": 137.94623655913978
+    },
+    "median_length": {
+      "ham": 53.0,
+      "spam": 145.0
+    }
+  },
+  "missing_text": 0,
+  "origin_by_subtype": {
+    "Both sources": {
+      "ham": 4310,
+      "smishing": 251,
+      "spam": 291,
+      "unspecified": 34
+    },
+    "Mendeley only": {
+      "ham": 524,
+      "smishing": 277,
+      "spam": 144,
+      "unspecified": 0
+    },
+    "UCI only": {
+      "ham": 207,
+      "smishing": 0,
+      "spam": 0,
+      "unspecified": 66
+    }
+  },
+  "prepared_directory": "combined-sms-seed-42",
+  "replacement_character_rows": 145,
+  "row_counts": {
+    "test": 916,
+    "train": 4272,
+    "validation": 916
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "subtype_counts": {
+    "ham": 5041,
+    "smishing": 528,
+    "spam": 435,
+    "unspecified": 100
+  },
+  "top_tokens": {
+    "ham": {
+      "come": 158,
+      "day": 164,
+      "good": 165,
+      "got": 157,
+      "gt": 210,
+      "just": 214,
+      "know": 176,
+      "like": 172,
+      "ll": 190,
+      "lt": 208,
+      "ok": 200,
+      "ur": 169
+    },
+    "smishing": {
+      "cash": 42,
+      "claim": 113,
+      "contact": 66,
+      "customer": 91,
+      "dear": 45,
+      "free": 69,
+      "guaranteed": 55,
+      "mobile": 67,
+      "prize": 90,
+      "ur": 42,
+      "urgent": 60,
+      "won": 52
+    },
+    "spam": {
+      "free": 93,
+      "just": 43,
+      "mobile": 46,
+      "new": 38,
+      "nokia": 37,
+      "reply": 38,
+      "send": 37,
+      "stop": 55,
+      "text": 55,
+      "txt": 82,
+      "uk": 38,
+      "ur": 69
+    }
+  }
+}

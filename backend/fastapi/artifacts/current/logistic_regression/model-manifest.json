@@ -1,0 +1,56 @@
+{
+  "class_labels": [
+    "ham",
+    "spam"
+  ],
+  "created_at": "2026-10-13T12:27:41.454996+00:00",
+  "dataset_sha256": "0ff1c047bc5ff415390909dd2ad7ee94d6e07d1bd7a5d23218f4ef81f53775e0",
+  "decision_threshold": 0.35,
+  "evaluation_sha256": "ef483f4e7a9de3b066c3164dcbea3b9abed319f235d060d0bd6bb64987b811c9",
+  "feature_configuration": {
+    "analyzer": "word",
+    "lowercase": true,
+    "max_features": 20000,
+    "min_df": 2,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "norm": "l2",
+    "strip_accents": null,
+    "sublinear_tf": false,
+    "token_pattern": "(?u)\\b\\w\\w+\\b"
+  },
+  "hyperparameters": {
+    "C": 2.0,
+    "max_iter": 2000,
+    "random_state": 42,
+    "solver": "liblinear"
+  },
+  "library_versions": {
+    "joblib": "1.6.0",
+    "numpy": "2.5.3",
+    "python": "3.14.7",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1"
+  },
+  "limitations": [
+    "Training data combines historical UCI SMS (2011) with the Mendeley SMS Phishing Dataset (2022); current messages and other languages may differ.",
+    "Spam classification does not detect executable malware or verify links.",
+    "Zero recognized vocabulary features cause abstention.",
+    "Near-duplicate templates may remain after exact normalization deduplication."
+  ],
+  "model_id": "logistic_regression",
+  "model_version": "sms-b5d453f438-2226ac7c49-714333-logistic_regression",
+  "pipeline_sha256": "dcc29569d725bc783f034995d191c91c2f40c7f33713eadc4abbdac45cd9be08",
+  "positive_label": "spam",
+  "preprocessing_version": "tfidf-word-v1",
+  "schema_version": 1,
+  "score_interpretation": "Uncalibrated model score for spam; not a guarantee of correctness or safety.",
+  "selection_decision_sha256": "17cf35f6312cc7dcf030b8680a892e84ae887d1a97cec45c4998dfe3ea004b6d",
+  "source_revision": "ecaef22504de55d56231d08160137b8b33537f20",
+  "source_sha256": "b5d453f43839465f6f8a65bc59fe9cd180350d480d77a41e84e34188a8df771f",
+  "split_manifest_sha256": "2226ac7c49f166b01a143b7c549b24db56abe31129d25b166995bfc434be0ae1",
+  "supported_domain": "English SMS-like messages, including smishing examples from the Mendeley SMS Phishing Dataset",
+  "supported_language": "en"
+}

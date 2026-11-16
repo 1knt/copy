@@ -1,0 +1,582 @@
+{
+  "classifier_comparison": [
+    {
+      "confusion_matrix": [
+        [
+          756,
+          0
+        ],
+        [
+          25,
+          135
+        ]
+      ],
+      "fit_seconds": 0.011115999994217418,
+      "input": "text",
+      "metrics": {
+        "accuracy": 0.972707423580786,
+        "f1": 0.9152542372881356,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.84375
+      },
+      "model": "Naive Bayes (TF-IDF)"
+    },
+    {
+      "confusion_matrix": [
+        [
+          754,
+          2
+        ],
+        [
+          23,
+          137
+        ]
+      ],
+      "fit_seconds": 0.00880440000037197,
+      "input": "text",
+      "metrics": {
+        "accuracy": 0.972707423580786,
+        "f1": 0.9163879598662207,
+        "false_positive_rate": 0.0026455026455026454,
+        "precision": 0.9856115107913669,
+        "recall": 0.85625
+      },
+      "model": "Logistic regression (TF-IDF)"
+    },
+    {
+      "confusion_matrix": [
+        [
+          753,
+          3
+        ],
+        [
+          9,
+          151
+        ]
+      ],
+      "fit_seconds": 0.006186900005559437,
+      "input": "text",
+      "metrics": {
+        "accuracy": 0.9868995633187773,
+        "f1": 0.9617834394904459,
+        "false_positive_rate": 0.003968253968253968,
+        "precision": 0.9805194805194806,
+        "recall": 0.94375
+      },
+      "model": "Linear SVM (TF-IDF)"
+    },
+    {
+      "confusion_matrix": [
+        [
+          756,
+          0
+        ],
+        [
+          26,
+          134
+        ]
+      ],
+      "fit_seconds": 2.106979699994554,
+      "input": "text",
+      "metrics": {
+        "accuracy": 0.9716157205240175,
+        "f1": 0.9115646258503401,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.8375
+      },
+      "model": "Random forest (TF-IDF)"
+    },
+    {
+      "confusion_matrix": [
+        [
+          737,
+          19
+        ],
+        [
+          30,
+          130
+        ]
+      ],
+      "fit_seconds": 0.10674370000197086,
+      "input": "text",
+      "metrics": {
+        "accuracy": 0.9465065502183406,
+        "f1": 0.8414239482200647,
+        "false_positive_rate": 0.02513227513227513,
+        "precision": 0.87248322147651,
+        "recall": 0.8125
+      },
+      "model": "Decision tree (TF-IDF)"
+    },
+    {
+      "confusion_matrix": [
+        [
+          754,
+          2
+        ],
+        [
+          27,
+          133
+        ]
+      ],
+      "fit_seconds": 0.0014943999995011836,
+      "input": "text",
+      "metrics": {
+        "accuracy": 0.9683406113537117,
+        "f1": 0.9016949152542373,
+        "false_positive_rate": 0.0026455026455026454,
+        "precision": 0.9851851851851852,
+        "recall": 0.83125
+      },
+      "model": "k-nearest neighbours (TF-IDF, k=5)"
+    },
+    {
+      "confusion_matrix": [
+        [
+          743,
+          13
+        ],
+        [
+          27,
+          133
+        ]
+      ],
+      "fit_seconds": 0.003764299995964393,
+      "input": "features",
+      "metrics": {
+        "accuracy": 0.9563318777292577,
+        "f1": 0.869281045751634,
+        "false_positive_rate": 0.017195767195767195,
+        "precision": 0.910958904109589,
+        "recall": 0.83125
+      },
+      "model": "Logistic regression (engineered features only)"
+    },
+    {
+      "confusion_matrix": [
+        [
+          749,
+          7
+        ],
+        [
+          23,
+          137
+        ]
+      ],
+      "fit_seconds": 0.01776380000228528,
+      "input": "both",
+      "metrics": {
+        "accuracy": 0.9672489082969432,
+        "f1": 0.9013157894736842,
+        "false_positive_rate": 0.009259259259259259,
+        "precision": 0.9513888888888888,
+        "recall": 0.85625
+      },
+      "model": "Logistic regression (TF-IDF + engineered)"
+    }
+  ],
+  "clustering": {
+    "dbscan": [
+      {
+        "adjusted_rand_vs_label": -0.022463700807759737,
+        "clusters": 2,
+        "eps": 0.6,
+        "min_samples": 5,
+        "noise_fraction": 0.9847161572052402,
+        "silhouette_without_noise": 0.5901128108312331
+      },
+      {
+        "adjusted_rand_vs_label": 0.03553781311515678,
+        "clusters": 5,
+        "eps": 0.7,
+        "min_samples": 5,
+        "noise_fraction": 0.962882096069869,
+        "silhouette_without_noise": 0.5168182613152026
+      },
+      {
+        "adjusted_rand_vs_label": 0.1360704481694219,
+        "clusters": 19,
+        "eps": 0.8,
+        "min_samples": 5,
+        "noise_fraction": 0.8482532751091703,
+        "silhouette_without_noise": 0.35190398838592146
+      },
+      {
+        "adjusted_rand_vs_label": 0.06581689592352409,
+        "clusters": 30,
+        "eps": 0.9,
+        "min_samples": 5,
+        "noise_fraction": 0.5753275109170306,
+        "silhouette_without_noise": 0.12432651337347712
+      },
+      {
+        "adjusted_rand_vs_label": -0.006227071050687331,
+        "clusters": 1,
+        "eps": 1.0,
+        "min_samples": 5,
+        "noise_fraction": 0.02947598253275109,
+        "silhouette_without_noise": null
+      },
+      {
+        "adjusted_rand_vs_label": 0.0,
+        "clusters": 1,
+        "eps": 1.1,
+        "min_samples": 5,
+        "noise_fraction": 0.0,
+        "silhouette_without_noise": null
+      }
+    ],
+    "kmeans": [
+      {
+        "adjusted_rand_vs_label": -0.0377218949253255,
+        "inertia": 3921.3896104004107,
+        "k": 2,
+        "spam_purity": 0.8253275109170306,
+        "validation_silhouette": 0.016082327565087116
+      },
+      {
+        "adjusted_rand_vs_label": 0.30540647071772975,
+        "inertia": 3854.683822744192,
+        "k": 3,
+        "spam_purity": 0.9203056768558951,
+        "validation_silhouette": 0.022915554786118262
+      },
+      {
+        "adjusted_rand_vs_label": 0.22384860505864487,
+        "inertia": 3800.9532368003042,
+        "k": 4,
+        "spam_purity": 0.9268558951965066,
+        "validation_silhouette": 0.0226757867576024
+      },
+      {
+        "adjusted_rand_vs_label": 0.19919347576994528,
+        "inertia": 3743.2758698587195,
+        "k": 5,
+        "spam_purity": 0.9443231441048034,
+        "validation_silhouette": 0.03429515817401835
+      },
+      {
+        "adjusted_rand_vs_label": 0.1367703093878106,
+        "inertia": 3697.6090962048365,
+        "k": 6,
+        "spam_purity": 0.9334061135371179,
+        "validation_silhouette": 0.03663289185051524
+      },
+      {
+        "adjusted_rand_vs_label": 0.12585031505671318,
+        "inertia": 3662.939505611781,
+        "k": 7,
+        "spam_purity": 0.8799126637554585,
+        "validation_silhouette": 0.03426207287082452
+      },
+      {
+        "adjusted_rand_vs_label": 0.11905050755623749,
+        "inertia": 3621.149108227546,
+        "k": 8,
+        "spam_purity": 0.9355895196506551,
+        "validation_silhouette": 0.0382967454547491
+      },
+      {
+        "adjusted_rand_vs_label": 0.0842728759462516,
+        "inertia": 3590.0720406063965,
+        "k": 9,
+        "spam_purity": 0.9355895196506551,
+        "validation_silhouette": 0.042896728371634905
+      },
+      {
+        "adjusted_rand_vs_label": 0.0716771619761374,
+        "inertia": 3549.771421329605,
+        "k": 10,
+        "spam_purity": 0.9399563318777293,
+        "validation_silhouette": 0.042081053243186936
+      }
+    ],
+    "representation": "TF-IDF (1-2 grams) -> TruncatedSVD 100 -> L2 normalization, fitted on training text"
+  },
+  "cross_source_generalisation": [
+    {
+      "confusion_matrix": [
+        [
+          78,
+          0
+        ],
+        [
+          26,
+          37
+        ]
+      ],
+      "evaluated_on": "Mendeley-only validation rows",
+      "evaluated_rows": 141,
+      "metrics": {
+        "accuracy": 0.8156028368794326,
+        "f1": 0.74,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.5873015873015873
+      },
+      "model": "Naive Bayes",
+      "training_data": "UCI only",
+      "training_rows": 3610
+    },
+    {
+      "confusion_matrix": [
+        [
+          678,
+          0
+        ],
+        [
+          18,
+          79
+        ]
+      ],
+      "evaluated_on": "UCI validation rows",
+      "evaluated_rows": 775,
+      "metrics": {
+        "accuracy": 0.9767741935483871,
+        "f1": 0.8977272727272727,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.8144329896907216
+      },
+      "model": "Naive Bayes",
+      "training_data": "UCI only",
+      "training_rows": 3610
+    },
+    {
+      "confusion_matrix": [
+        [
+          78,
+          0
+        ],
+        [
+          23,
+          40
+        ]
+      ],
+      "evaluated_on": "Mendeley-only validation rows",
+      "evaluated_rows": 141,
+      "metrics": {
+        "accuracy": 0.8368794326241135,
+        "f1": 0.7766990291262136,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.6349206349206349
+      },
+      "model": "Logistic regression",
+      "training_data": "UCI only",
+      "training_rows": 3610
+    },
+    {
+      "confusion_matrix": [
+        [
+          678,
+          0
+        ],
+        [
+          16,
+          81
+        ]
+      ],
+      "evaluated_on": "UCI validation rows",
+      "evaluated_rows": 775,
+      "metrics": {
+        "accuracy": 0.9793548387096774,
+        "f1": 0.9101123595505618,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.8350515463917526
+      },
+      "model": "Logistic regression",
+      "training_data": "UCI only",
+      "training_rows": 3610
+    },
+    {
+      "confusion_matrix": [
+        [
+          78,
+          0
+        ],
+        [
+          10,
+          53
+        ]
+      ],
+      "evaluated_on": "Mendeley-only validation rows",
+      "evaluated_rows": 141,
+      "metrics": {
+        "accuracy": 0.9290780141843972,
+        "f1": 0.9137931034482759,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.8412698412698413
+      },
+      "model": "Naive Bayes",
+      "training_data": "UCI + Mendeley",
+      "training_rows": 4272
+    },
+    {
+      "confusion_matrix": [
+        [
+          678,
+          0
+        ],
+        [
+          15,
+          82
+        ]
+      ],
+      "evaluated_on": "UCI validation rows",
+      "evaluated_rows": 775,
+      "metrics": {
+        "accuracy": 0.9806451612903225,
+        "f1": 0.9162011173184358,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.845360824742268
+      },
+      "model": "Naive Bayes",
+      "training_data": "UCI + Mendeley",
+      "training_rows": 4272
+    },
+    {
+      "confusion_matrix": [
+        [
+          78,
+          0
+        ],
+        [
+          12,
+          51
+        ]
+      ],
+      "evaluated_on": "Mendeley-only validation rows",
+      "evaluated_rows": 141,
+      "metrics": {
+        "accuracy": 0.9148936170212766,
+        "f1": 0.8947368421052632,
+        "false_positive_rate": 0.0,
+        "precision": 1.0,
+        "recall": 0.8095238095238095
+      },
+      "model": "Logistic regression",
+      "training_data": "UCI + Mendeley",
+      "training_rows": 4272
+    },
+    {
+      "confusion_matrix": [
+        [
+          676,
+          2
+        ],
+        [
+          11,
+          86
+        ]
+      ],
+      "evaluated_on": "UCI validation rows",
+      "evaluated_rows": 775,
+      "metrics": {
+        "accuracy": 0.983225806451613,
+        "f1": 0.9297297297297298,
+        "false_positive_rate": 0.0029498525073746312,
+        "precision": 0.9772727272727273,
+        "recall": 0.8865979381443299
+      },
+      "model": "Logistic regression",
+      "training_data": "UCI + Mendeley",
+      "training_rows": 4272
+    }
+  ],
+  "length_regression_check": {
+    "coefficients": {
+      "digit_ratio": 18.792157548861713,
+      "exclamation_count": 0.6400059018678198,
+      "has_currency": 1.011502748666615,
+      "has_phone": 18.179094078182594,
+      "has_url": 22.720829216752747,
+      "uppercase_ratio": 3.0522890903516386,
+      "word_count": 5.0103539671180926
+    },
+    "features": [
+      "word_count",
+      "digit_ratio",
+      "uppercase_ratio",
+      "has_url",
+      "has_phone",
+      "has_currency",
+      "exclamation_count"
+    ],
+    "mae": 8.40246613036477,
+    "purpose": "Sanity check that engineered counts are consistent; not used for spam decisions.",
+    "r2": 0.9553738626143407,
+    "target": "message length in characters"
+  },
+  "note": "Exploratory experiments use the frozen training and validation partitions. Only the served release models are evaluated on the test partition.",
+  "release_test_curves": {
+    "logistic_regression": {
+      "pr_auc": 0.9926188383598451,
+      "roc_auc": 0.9974992314914052,
+      "threshold": 0.35
+    },
+    "naive_bayes": {
+      "pr_auc": 0.9876546806938279,
+      "roc_auc": 0.9956049616576523,
+      "threshold": 0.25
+    }
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "selection_partition": "validation",
+  "smishing_subtype": [
+    {
+      "confusion_matrix": [
+        [
+          65,
+          5
+        ],
+        [
+          5,
+          70
+        ]
+      ],
+      "metrics": {
+        "accuracy": 0.9310344827586207,
+        "f1": 0.9333333333333333,
+        "false_positive_rate": 0.07142857142857142,
+        "precision": 0.9333333333333333,
+        "recall": 0.9333333333333333
+      },
+      "model": "Logistic regression",
+      "negative_class": "generic spam",
+      "positive_class": "smishing",
+      "training_rows": 678,
+      "validation_rows": 145
+    },
+    {
+      "confusion_matrix": [
+        [
+          67,
+          3
+        ],
+        [
+          9,
+          66
+        ]
+      ],
+      "metrics": {
+        "accuracy": 0.9172413793103448,
+        "f1": 0.9166666666666666,
+        "false_positive_rate": 0.04285714285714286,
+        "precision": 0.9565217391304348,
+        "recall": 0.88
+      },
+      "model": "Random forest",
+      "negative_class": "generic spam",
+      "positive_class": "smishing",
+      "training_rows": 678,
+      "validation_rows": 145
+    }
+  ]
+}

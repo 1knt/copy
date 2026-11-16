@@ -1,0 +1,186 @@
+{
+  "confusion_matrix": {
+    "labels": [
+      "ham",
+      "spam"
+    ],
+    "matrix": [
+      [
+        747,
+        10
+      ],
+      [
+        6,
+        153
+      ]
+    ]
+  },
+  "dataset_sha256": "0ff1c047bc5ff415390909dd2ad7ee94d6e07d1bd7a5d23218f4ef81f53775e0",
+  "decision_threshold": 0.25,
+  "dummy_baseline": {
+    "confusion_matrix": {
+      "labels": [
+        "ham",
+        "spam"
+      ],
+      "matrix": [
+        [
+          757,
+          0
+        ],
+        [
+          159,
+          0
+        ]
+      ]
+    },
+    "metrics": {
+      "accuracy": 0.8264192139737991,
+      "f1": 0.0,
+      "false_positive_rate": 0.0,
+      "precision": null,
+      "recall": 0.0
+    },
+    "sample_count": 916,
+    "strategy": "most_frequent",
+    "support": {
+      "ham": 757,
+      "spam": 159
+    },
+    "undefined_metrics": {
+      "precision": "The denominator is zero for this evaluated sample."
+    }
+  },
+  "evaluated_at": "2026-10-13T12:27:41.398317+00:00",
+  "inference_batch_seconds": 0.005960099995718338,
+  "latency_note": "Batch wall time divided by sample count; not an individual-request latency percentile.",
+  "mean_batch_seconds_per_sample": 6.506659383971984e-06,
+  "metrics": {
+    "accuracy": 0.982532751091703,
+    "f1": 0.9503105590062112,
+    "false_positive_rate": 0.013210039630118891,
+    "precision": 0.9386503067484663,
+    "recall": 0.9622641509433962
+  },
+  "model_id": "naive_bayes",
+  "model_version": "sms-b5d453f438-2226ac7c49-714333-naive_bayes",
+  "operational": {
+    "abstained_count": 1,
+    "abstention_support": {
+      "ham": 1,
+      "spam": 0
+    },
+    "classified_count": 915,
+    "confusion_matrix": {
+      "labels": [
+        "ham",
+        "spam"
+      ],
+      "matrix": [
+        [
+          746,
+          10
+        ],
+        [
+          6,
+          153
+        ]
+      ]
+    },
+    "coverage": 0.9989082969432315,
+    "metrics": {
+      "accuracy": 0.9825136612021858,
+      "f1": 0.9503105590062112,
+      "false_positive_rate": 0.013227513227513227,
+      "precision": 0.9386503067484663,
+      "recall": 0.9622641509433962
+    },
+    "sample_count": 915,
+    "support": {
+      "ham": 756,
+      "spam": 159
+    },
+    "total_count": 916,
+    "undefined_metrics": {}
+  },
+  "partition": "test",
+  "sample_count": 916,
+  "schema_version": 1,
+  "selection_decision_sha256": "17cf35f6312cc7dcf030b8680a892e84ae887d1a97cec45c4998dfe3ea004b6d",
+  "split_manifest_sha256": "2226ac7c49f166b01a143b7c549b24db56abe31129d25b166995bfc434be0ae1",
+  "support": {
+    "ham": 757,
+    "spam": 159
+  },
+  "undefined_metrics": {},
+  "validation": {
+    "confusion_matrix": {
+      "labels": [
+        "ham",
+        "spam"
+      ],
+      "matrix": [
+        [
+          749,
+          7
+        ],
+        [
+          8,
+          152
+        ]
+      ]
+    },
+    "metrics": {
+      "accuracy": 0.9836244541484717,
+      "f1": 0.9529780564263323,
+      "false_positive_rate": 0.009259259259259259,
+      "precision": 0.9559748427672956,
+      "recall": 0.95
+    },
+    "operational": {
+      "abstained_count": 1,
+      "abstention_support": {
+        "ham": 1,
+        "spam": 0
+      },
+      "classified_count": 915,
+      "confusion_matrix": {
+        "labels": [
+          "ham",
+          "spam"
+        ],
+        "matrix": [
+          [
+            748,
+            7
+          ],
+          [
+            8,
+            152
+          ]
+        ]
+      },
+      "coverage": 0.9989082969432315,
+      "metrics": {
+        "accuracy": 0.9836065573770492,
+        "f1": 0.9529780564263323,
+        "false_positive_rate": 0.009271523178807948,
+        "precision": 0.9559748427672956,
+        "recall": 0.95
+      },
+      "sample_count": 915,
+      "support": {
+        "ham": 755,
+        "spam": 160
+      },
+      "total_count": 916,
+      "undefined_metrics": {}
+    },
+    "sample_count": 916,
+    "support": {
+      "ham": 756,
+      "spam": 160
+    },
+    "undefined_metrics": {}
+  }
+}

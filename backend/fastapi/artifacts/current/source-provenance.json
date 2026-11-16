@@ -1,0 +1,37 @@
+{
+  "combination": "SHA-256 of the two member dataset hashes joined in source order",
+  "dataset_id": "uci_sms_plus_mendeley_smishing",
+  "dataset_sha256": "0ff1c047bc5ff415390909dd2ad7ee94d6e07d1bd7a5d23218f4ef81f53775e0",
+  "parser_version": "combined-v1",
+  "source_id": "combined",
+  "sources": [
+    {
+      "archive_member": "SMSSpamCollection",
+      "archive_sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3",
+      "citation": "Almeida, T. and Hidalgo, J. (2011). SMS Spam Collection. UCI Machine Learning Repository. https://doi.org/10.24432/C5CC84",
+      "dataset_id": "uci_sms_spam_collection",
+      "dataset_sha256": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "parser_version": "uci-tab-v1",
+      "retrieved_at": "2026-09-22T15:09:43.085046+00:00",
+      "source_id": "uci_sms",
+      "source_page": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+      "source_url": "https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip"
+    },
+    {
+      "archive_member": "Dataset_5971.csv",
+      "archive_sha256": "9bbf3188fdad81495d8e82825648b9b63b53fc86841a3d26c02629990b233cc3",
+      "citation": "Mishra, S. and Soni, D. (2022). SMS Phishing Dataset for Machine Learning and Pattern Recognition. Mendeley Data, V1. https://doi.org/10.17632/f45bkkt8pr.1",
+      "dataset_id": "mendeley_sms_phishing_dataset_v1",
+      "dataset_sha256": "649844f1c62a6b27e145eaf17a65f7010c56c390e11a794ea8329993a05ba71e",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "parser_version": "mendeley-csv-v1",
+      "retrieved_at": "2026-10-13T12:26:35.710518+00:00",
+      "source_id": "mendeley_smishing",
+      "source_page": "https://data.mendeley.com/datasets/f45bkkt8pr/1",
+      "source_url": "https://data.mendeley.com/public-files/datasets/f45bkkt8pr/files/edb361de-918d-469f-9106-e84823830665/file_downloaded"
+    }
+  ]
+}

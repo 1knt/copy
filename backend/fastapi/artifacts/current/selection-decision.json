@@ -1,0 +1,3870 @@
+{
+  "candidate_experiments": [
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          1
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 3640,
+      "fit_seconds": 0.029437699995469302,
+      "hyperparameters": {
+        "alpha": 0.5
+      },
+      "model_id": "naive_bayes",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              756,
+              0
+            ],
+            [
+              20,
+              140
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9781659388646288,
+          "f1": 0.9333333333333333,
+          "false_positive_rate": 0.0,
+          "precision": 1.0,
+          "recall": 0.875
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                755,
+                0
+              ],
+              [
+                20,
+                140
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9781420765027322,
+            "f1": 0.9333333333333333,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.875
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          1
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 3640,
+      "fit_seconds": 0.030160700000124052,
+      "hyperparameters": {
+        "alpha": 1.0
+      },
+      "model_id": "naive_bayes",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              756,
+              0
+            ],
+            [
+              32,
+              128
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9650655021834061,
+          "f1": 0.8888888888888888,
+          "false_positive_rate": 0.0,
+          "precision": 1.0,
+          "recall": 0.8
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                755,
+                0
+              ],
+              [
+                32,
+                128
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9650273224043716,
+            "f1": 0.8888888888888888,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.8
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 11909,
+      "fit_seconds": 0.06298099999548867,
+      "hyperparameters": {
+        "alpha": 0.5
+      },
+      "model_id": "naive_bayes",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              756,
+              0
+            ],
+            [
+              25,
+              135
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.972707423580786,
+          "f1": 0.9152542372881356,
+          "false_positive_rate": 0.0,
+          "precision": 1.0,
+          "recall": 0.84375
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                755,
+                0
+              ],
+              [
+                25,
+                135
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9726775956284153,
+            "f1": 0.9152542372881356,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.84375
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 11909,
+      "fit_seconds": 0.06617230000847485,
+      "hyperparameters": {
+        "alpha": 1.0
+      },
+      "model_id": "naive_bayes",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              756,
+              0
+            ],
+            [
+              41,
+              119
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9552401746724891,
+          "f1": 0.8530465949820788,
+          "false_positive_rate": 0.0,
+          "precision": 1.0,
+          "recall": 0.74375
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                755,
+                0
+              ],
+              [
+                41,
+                119
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9551912568306011,
+            "f1": 0.8530465949820788,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.74375
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          1
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 3640,
+      "fit_seconds": 0.032221999994362704,
+      "hyperparameters": {
+        "C": 0.5,
+        "max_iter": 2000,
+        "random_state": 42,
+        "solver": "liblinear"
+      },
+      "model_id": "logistic_regression",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              756,
+              0
+            ],
+            [
+              42,
+              118
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9541484716157205,
+          "f1": 0.8489208633093526,
+          "false_positive_rate": 0.0,
+          "precision": 1.0,
+          "recall": 0.7375
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                755,
+                0
+              ],
+              [
+                42,
+                118
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9540983606557377,
+            "f1": 0.8489208633093526,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.7375
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          1
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 3640,
+      "fit_seconds": 0.03261950000887737,
+      "hyperparameters": {
+        "C": 1.0,
+        "max_iter": 2000,
+        "random_state": 42,
+        "solver": "liblinear"
+      },
+      "model_id": "logistic_regression",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              756,
+              0
+            ],
+            [
+              32,
+              128
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9650655021834061,
+          "f1": 0.8888888888888888,
+          "false_positive_rate": 0.0,
+          "precision": 1.0,
+          "recall": 0.8
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                755,
+                0
+              ],
+              [
+                32,
+                128
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9650273224043716,
+            "f1": 0.8888888888888888,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.8
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          1
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 3640,
+      "fit_seconds": 0.033203300001332536,
+      "hyperparameters": {
+        "C": 2.0,
+        "max_iter": 2000,
+        "random_state": 42,
+        "solver": "liblinear"
+      },
+      "model_id": "logistic_regression",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              755,
+              1
+            ],
+            [
+              25,
+              135
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9716157205240175,
+          "f1": 0.9121621621621622,
+          "false_positive_rate": 0.0013227513227513227,
+          "precision": 0.9926470588235294,
+          "recall": 0.84375
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                754,
+                1
+              ],
+              [
+                25,
+                135
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9715846994535519,
+            "f1": 0.9121621621621622,
+            "false_positive_rate": 0.0013245033112582781,
+            "precision": 0.9926470588235294,
+            "recall": 0.84375
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 11909,
+      "fit_seconds": 0.0714328000030946,
+      "hyperparameters": {
+        "C": 0.5,
+        "max_iter": 2000,
+        "random_state": 42,
+        "solver": "liblinear"
+      },
+      "model_id": "logistic_regression",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              756,
+              0
+            ],
+            [
+              52,
+              108
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9432314410480349,
+          "f1": 0.8059701492537313,
+          "false_positive_rate": 0.0,
+          "precision": 1.0,
+          "recall": 0.675
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                755,
+                0
+              ],
+              [
+                52,
+                108
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9431693989071038,
+            "f1": 0.8059701492537313,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.675
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 11909,
+      "fit_seconds": 0.07305540000379551,
+      "hyperparameters": {
+        "C": 1.0,
+        "max_iter": 2000,
+        "random_state": 42,
+        "solver": "liblinear"
+      },
+      "model_id": "logistic_regression",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              755,
+              1
+            ],
+            [
+              32,
+              128
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9639737991266376,
+          "f1": 0.8858131487889274,
+          "false_positive_rate": 0.0013227513227513227,
+          "precision": 0.9922480620155039,
+          "recall": 0.8
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                754,
+                1
+              ],
+              [
+                32,
+                128
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9639344262295082,
+            "f1": 0.8858131487889274,
+            "false_positive_rate": 0.0013245033112582781,
+            "precision": 0.9922480620155039,
+            "recall": 0.8
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    {
+      "feature_configuration": {
+        "analyzer": "word",
+        "lowercase": true,
+        "max_features": 20000,
+        "min_df": 2,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "norm": "l2",
+        "strip_accents": null,
+        "sublinear_tf": false,
+        "token_pattern": "(?u)\\b\\w\\w+\\b"
+      },
+      "feature_count": 11909,
+      "fit_seconds": 0.07511530000192579,
+      "hyperparameters": {
+        "C": 2.0,
+        "max_iter": 2000,
+        "random_state": 42,
+        "solver": "liblinear"
+      },
+      "model_id": "logistic_regression",
+      "validation_at_default_threshold": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              754,
+              2
+            ],
+            [
+              23,
+              137
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.972707423580786,
+          "f1": 0.9163879598662207,
+          "false_positive_rate": 0.0026455026455026454,
+          "precision": 0.9856115107913669,
+          "recall": 0.85625
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                753,
+                2
+              ],
+              [
+                23,
+                137
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9726775956284153,
+            "f1": 0.9163879598662207,
+            "false_positive_rate": 0.0026490066225165563,
+            "precision": 0.9856115107913669,
+            "recall": 0.85625
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    }
+  ],
+  "classification_selection_rule": "At default threshold maximize spam F1, then precision, then fewer vocabulary features, then lower parameter. Tune threshold only on the selected family candidate; break ties by distance to 0.5, then higher threshold. Primary uses tuned validation F1, precision, then naive_bayes.",
+  "clustering": {
+    "candidates": [
+      {
+        "k": 2,
+        "silhouette_metric": "euclidean",
+        "stability_adjusted_rand_index": 0.9908185821445403,
+        "stability_seeds": [
+          42,
+          43,
+          44
+        ],
+        "train_inertia": 3921.3896104004107,
+        "valid": true,
+        "validation_cluster_counts": {
+          "0": 678,
+          "1": 238
+        },
+        "validation_silhouette": 0.01608232756508712
+      },
+      {
+        "k": 4,
+        "silhouette_metric": "euclidean",
+        "stability_adjusted_rand_index": 0.7823645902111949,
+        "stability_seeds": [
+          42,
+          43,
+          44
+        ],
+        "train_inertia": 3800.9532368003042,
+        "valid": true,
+        "validation_cluster_counts": {
+          "0": 117,
+          "1": 443,
+          "2": 191,
+          "3": 165
+        },
+        "validation_silhouette": 0.022675786757602446
+      },
+      {
+        "k": 6,
+        "silhouette_metric": "euclidean",
+        "stability_adjusted_rand_index": 0.6211664424792063,
+        "stability_seeds": [
+          42,
+          43,
+          44
+        ],
+        "train_inertia": 3697.6090962048365,
+        "valid": true,
+        "validation_cluster_counts": {
+          "0": 173,
+          "1": 70,
+          "2": 157,
+          "3": 337,
+          "4": 140,
+          "5": 39
+        },
+        "validation_silhouette": 0.03663289185051523
+      }
+    ],
+    "selected": {
+      "k": 6,
+      "silhouette_metric": "euclidean",
+      "stability_adjusted_rand_index": 0.6211664424792063,
+      "stability_seeds": [
+        42,
+        43,
+        44
+      ],
+      "train_inertia": 3697.6090962048365,
+      "valid": true,
+      "validation_cluster_counts": {
+        "0": 173,
+        "1": 70,
+        "2": 157,
+        "3": 337,
+        "4": 140,
+        "5": 39
+      },
+      "validation_silhouette": 0.03663289185051523
+    },
+    "selection_rule": "Reject missing validation clusters; maximize validation silhouette, then seed stability, then fewer clusters. Labels are unused.",
+    "svd_dimensions": 100
+  },
+  "clustering_pipeline_sha256": "322772427285e781a0eac179b5251ec4d5487f360baa2480b767436dbb5817a6",
+  "created_at": "2026-10-13T12:27:41.048718+00:00",
+  "dataset_sha256": "0ff1c047bc5ff415390909dd2ad7ee94d6e07d1bd7a5d23218f4ef81f53775e0",
+  "library_versions": {
+    "joblib": "1.6.0",
+    "numpy": "2.5.3",
+    "python": "3.14.7",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1"
+  },
+  "models": {
+    "logistic_regression": {
+      "configuration": {
+        "feature_configuration": {
+          "analyzer": "word",
+          "lowercase": true,
+          "max_features": 20000,
+          "min_df": 2,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "norm": "l2",
+          "strip_accents": null,
+          "sublinear_tf": false,
+          "token_pattern": "(?u)\\b\\w\\w+\\b"
+        },
+        "feature_count": 11909,
+        "fit_seconds": 0.07511530000192579,
+        "hyperparameters": {
+          "C": 2.0,
+          "max_iter": 2000,
+          "random_state": 42,
+          "solver": "liblinear"
+        },
+        "model_id": "logistic_regression",
+        "validation_at_default_threshold": {
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                754,
+                2
+              ],
+              [
+                23,
+                137
+              ]
+            ]
+          },
+          "metrics": {
+            "accuracy": 0.972707423580786,
+            "f1": 0.9163879598662207,
+            "false_positive_rate": 0.0026455026455026454,
+            "precision": 0.9856115107913669,
+            "recall": 0.85625
+          },
+          "operational": {
+            "abstained_count": 1,
+            "abstention_support": {
+              "ham": 1,
+              "spam": 0
+            },
+            "classified_count": 915,
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  753,
+                  2
+                ],
+                [
+                  23,
+                  137
+                ]
+              ]
+            },
+            "coverage": 0.9989082969432315,
+            "metrics": {
+              "accuracy": 0.9726775956284153,
+              "f1": 0.9163879598662207,
+              "false_positive_rate": 0.0026490066225165563,
+              "precision": 0.9856115107913669,
+              "recall": 0.85625
+            },
+            "sample_count": 915,
+            "support": {
+              "ham": 755,
+              "spam": 160
+            },
+            "total_count": 916,
+            "undefined_metrics": {}
+          },
+          "sample_count": 916,
+          "support": {
+            "ham": 756,
+            "spam": 160
+          },
+          "undefined_metrics": {}
+        }
+      },
+      "decision_threshold": 0.35,
+      "pipeline_sha256": "dcc29569d725bc783f034995d191c91c2f40c7f33713eadc4abbdac45cd9be08",
+      "threshold_search": [
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  681,
+                  75
+                ],
+                [
+                  2,
+                  158
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.915938864628821,
+              "f1": 0.8040712468193384,
+              "false_positive_rate": 0.0992063492063492,
+              "precision": 0.6781115879828327,
+              "recall": 0.9875
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    680,
+                    75
+                  ],
+                  [
+                    2,
+                    158
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9158469945355191,
+                "f1": 0.8040712468193384,
+                "false_positive_rate": 0.09933774834437085,
+                "precision": 0.6781115879828327,
+                "recall": 0.9875
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.1
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  732,
+                  24
+                ],
+                [
+                  4,
+                  156
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9694323144104804,
+              "f1": 0.9176470588235294,
+              "false_positive_rate": 0.031746031746031744,
+              "precision": 0.8666666666666667,
+              "recall": 0.975
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    731,
+                    24
+                  ],
+                  [
+                    4,
+                    156
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9693989071038251,
+                "f1": 0.9176470588235294,
+                "false_positive_rate": 0.031788079470198675,
+                "precision": 0.8666666666666667,
+                "recall": 0.975
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.15
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  743,
+                  13
+                ],
+                [
+                  7,
+                  153
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9781659388646288,
+              "f1": 0.9386503067484663,
+              "false_positive_rate": 0.017195767195767195,
+              "precision": 0.9216867469879518,
+              "recall": 0.95625
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    742,
+                    13
+                  ],
+                  [
+                    7,
+                    153
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9781420765027322,
+                "f1": 0.9386503067484663,
+                "false_positive_rate": 0.017218543046357615,
+                "precision": 0.9216867469879518,
+                "recall": 0.95625
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.2
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  747,
+                  9
+                ],
+                [
+                  10,
+                  150
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9792576419213974,
+              "f1": 0.9404388714733543,
+              "false_positive_rate": 0.011904761904761904,
+              "precision": 0.9433962264150944,
+              "recall": 0.9375
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    746,
+                    9
+                  ],
+                  [
+                    10,
+                    150
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9792349726775956,
+                "f1": 0.9404388714733543,
+                "false_positive_rate": 0.011920529801324504,
+                "precision": 0.9433962264150944,
+                "recall": 0.9375
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.25
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  749,
+                  7
+                ],
+                [
+                  10,
+                  150
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9814410480349345,
+              "f1": 0.9463722397476341,
+              "false_positive_rate": 0.009259259259259259,
+              "precision": 0.9554140127388535,
+              "recall": 0.9375
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    748,
+                    7
+                  ],
+                  [
+                    10,
+                    150
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9814207650273225,
+                "f1": 0.9463722397476341,
+                "false_positive_rate": 0.009271523178807948,
+                "precision": 0.9554140127388535,
+                "recall": 0.9375
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.3
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  752,
+                  4
+                ],
+                [
+                  12,
+                  148
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.982532751091703,
+              "f1": 0.9487179487179487,
+              "false_positive_rate": 0.005291005291005291,
+              "precision": 0.9736842105263158,
+              "recall": 0.925
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    751,
+                    4
+                  ],
+                  [
+                    12,
+                    148
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9825136612021858,
+                "f1": 0.9487179487179487,
+                "false_positive_rate": 0.005298013245033113,
+                "precision": 0.9736842105263158,
+                "recall": 0.925
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.35
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  753,
+                  3
+                ],
+                [
+                  14,
+                  146
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9814410480349345,
+              "f1": 0.9449838187702265,
+              "false_positive_rate": 0.003968253968253968,
+              "precision": 0.9798657718120806,
+              "recall": 0.9125
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    752,
+                    3
+                  ],
+                  [
+                    14,
+                    146
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9814207650273225,
+                "f1": 0.9449838187702265,
+                "false_positive_rate": 0.003973509933774834,
+                "precision": 0.9798657718120806,
+                "recall": 0.9125
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.4
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  753,
+                  3
+                ],
+                [
+                  18,
+                  142
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9770742358078602,
+              "f1": 0.9311475409836065,
+              "false_positive_rate": 0.003968253968253968,
+              "precision": 0.9793103448275862,
+              "recall": 0.8875
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    752,
+                    3
+                  ],
+                  [
+                    18,
+                    142
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9770491803278688,
+                "f1": 0.9311475409836065,
+                "false_positive_rate": 0.003973509933774834,
+                "precision": 0.9793103448275862,
+                "recall": 0.8875
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.45
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  754,
+                  2
+                ],
+                [
+                  23,
+                  137
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.972707423580786,
+              "f1": 0.9163879598662207,
+              "false_positive_rate": 0.0026455026455026454,
+              "precision": 0.9856115107913669,
+              "recall": 0.85625
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    753,
+                    2
+                  ],
+                  [
+                    23,
+                    137
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9726775956284153,
+                "f1": 0.9163879598662207,
+                "false_positive_rate": 0.0026490066225165563,
+                "precision": 0.9856115107913669,
+                "recall": 0.85625
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.5
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  754,
+                  2
+                ],
+                [
+                  27,
+                  133
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9683406113537117,
+              "f1": 0.9016949152542373,
+              "false_positive_rate": 0.0026455026455026454,
+              "precision": 0.9851851851851852,
+              "recall": 0.83125
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    753,
+                    2
+                  ],
+                  [
+                    27,
+                    133
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9683060109289617,
+                "f1": 0.9016949152542373,
+                "false_positive_rate": 0.0026490066225165563,
+                "precision": 0.9851851851851852,
+                "recall": 0.83125
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.55
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  32,
+                  128
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9650655021834061,
+              "f1": 0.8888888888888888,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.8
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    32,
+                    128
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9650273224043716,
+                "f1": 0.8888888888888888,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.8
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.6
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  39,
+                  121
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9574235807860262,
+              "f1": 0.8612099644128114,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.75625
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    39,
+                    121
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9573770491803278,
+                "f1": 0.8612099644128114,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.75625
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.65
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  46,
+                  114
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9497816593886463,
+              "f1": 0.8321167883211679,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.7125
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    46,
+                    114
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9497267759562842,
+                "f1": 0.8321167883211679,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.7125
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.7
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  58,
+                  102
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9366812227074236,
+              "f1": 0.7786259541984732,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.6375
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    58,
+                    102
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9366120218579235,
+                "f1": 0.7786259541984732,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.6375
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.75
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  69,
+                  91
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9246724890829694,
+              "f1": 0.7250996015936255,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.56875
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    69,
+                    91
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9245901639344263,
+                "f1": 0.7250996015936255,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.56875
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.8
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  91,
+                  69
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9006550218340611,
+              "f1": 0.6026200873362445,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.43125
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    91,
+                    69
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9005464480874317,
+                "f1": 0.6026200873362445,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.43125
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.85
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  116,
+                  44
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.8733624454148472,
+              "f1": 0.43137254901960786,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.275
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    116,
+                    44
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.8732240437158469,
+                "f1": 0.43137254901960786,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.275
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.9
+        }
+      ],
+      "validation": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              752,
+              4
+            ],
+            [
+              12,
+              148
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.982532751091703,
+          "f1": 0.9487179487179487,
+          "false_positive_rate": 0.005291005291005291,
+          "precision": 0.9736842105263158,
+          "recall": 0.925
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                751,
+                4
+              ],
+              [
+                12,
+                148
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9825136612021858,
+            "f1": 0.9487179487179487,
+            "false_positive_rate": 0.005298013245033113,
+            "precision": 0.9736842105263158,
+            "recall": 0.925
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    },
+    "naive_bayes": {
+      "configuration": {
+        "feature_configuration": {
+          "analyzer": "word",
+          "lowercase": true,
+          "max_features": 20000,
+          "min_df": 2,
+          "ngram_range": [
+            1,
+            1
+          ],
+          "norm": "l2",
+          "strip_accents": null,
+          "sublinear_tf": false,
+          "token_pattern": "(?u)\\b\\w\\w+\\b"
+        },
+        "feature_count": 3640,
+        "fit_seconds": 0.029437699995469302,
+        "hyperparameters": {
+          "alpha": 0.5
+        },
+        "model_id": "naive_bayes",
+        "validation_at_default_threshold": {
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                756,
+                0
+              ],
+              [
+                20,
+                140
+              ]
+            ]
+          },
+          "metrics": {
+            "accuracy": 0.9781659388646288,
+            "f1": 0.9333333333333333,
+            "false_positive_rate": 0.0,
+            "precision": 1.0,
+            "recall": 0.875
+          },
+          "operational": {
+            "abstained_count": 1,
+            "abstention_support": {
+              "ham": 1,
+              "spam": 0
+            },
+            "classified_count": 915,
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  755,
+                  0
+                ],
+                [
+                  20,
+                  140
+                ]
+              ]
+            },
+            "coverage": 0.9989082969432315,
+            "metrics": {
+              "accuracy": 0.9781420765027322,
+              "f1": 0.9333333333333333,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.875
+            },
+            "sample_count": 915,
+            "support": {
+              "ham": 755,
+              "spam": 160
+            },
+            "total_count": 916,
+            "undefined_metrics": {}
+          },
+          "sample_count": 916,
+          "support": {
+            "ham": 756,
+            "spam": 160
+          },
+          "undefined_metrics": {}
+        }
+      },
+      "decision_threshold": 0.25,
+      "pipeline_sha256": "4fb2395d03e376221bdb7f8eed71fadf01d1f3648c00a570d849afaf26ea2a27",
+      "threshold_search": [
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  716,
+                  40
+                ],
+                [
+                  4,
+                  156
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9519650655021834,
+              "f1": 0.8764044943820225,
+              "false_positive_rate": 0.05291005291005291,
+              "precision": 0.7959183673469388,
+              "recall": 0.975
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    716,
+                    39
+                  ],
+                  [
+                    4,
+                    156
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9530054644808743,
+                "f1": 0.8788732394366198,
+                "false_positive_rate": 0.051655629139072845,
+                "precision": 0.8,
+                "recall": 0.975
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.1
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  736,
+                  20
+                ],
+                [
+                  6,
+                  154
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9716157205240175,
+              "f1": 0.9221556886227545,
+              "false_positive_rate": 0.026455026455026454,
+              "precision": 0.8850574712643678,
+              "recall": 0.9625
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    736,
+                    19
+                  ],
+                  [
+                    6,
+                    154
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9726775956284153,
+                "f1": 0.924924924924925,
+                "false_positive_rate": 0.025165562913907286,
+                "precision": 0.8901734104046243,
+                "recall": 0.9625
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.15
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  745,
+                  11
+                ],
+                [
+                  7,
+                  153
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.980349344978166,
+              "f1": 0.9444444444444444,
+              "false_positive_rate": 0.01455026455026455,
+              "precision": 0.9329268292682927,
+              "recall": 0.95625
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    744,
+                    11
+                  ],
+                  [
+                    7,
+                    153
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.980327868852459,
+                "f1": 0.9444444444444444,
+                "false_positive_rate": 0.01456953642384106,
+                "precision": 0.9329268292682927,
+                "recall": 0.95625
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.2
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  749,
+                  7
+                ],
+                [
+                  8,
+                  152
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9836244541484717,
+              "f1": 0.9529780564263323,
+              "false_positive_rate": 0.009259259259259259,
+              "precision": 0.9559748427672956,
+              "recall": 0.95
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    748,
+                    7
+                  ],
+                  [
+                    8,
+                    152
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9836065573770492,
+                "f1": 0.9529780564263323,
+                "false_positive_rate": 0.009271523178807948,
+                "precision": 0.9559748427672956,
+                "recall": 0.95
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.25
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  752,
+                  4
+                ],
+                [
+                  12,
+                  148
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.982532751091703,
+              "f1": 0.9487179487179487,
+              "false_positive_rate": 0.005291005291005291,
+              "precision": 0.9736842105263158,
+              "recall": 0.925
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    751,
+                    4
+                  ],
+                  [
+                    12,
+                    148
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9825136612021858,
+                "f1": 0.9487179487179487,
+                "false_positive_rate": 0.005298013245033113,
+                "precision": 0.9736842105263158,
+                "recall": 0.925
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.3
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  754,
+                  2
+                ],
+                [
+                  13,
+                  147
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9836244541484717,
+              "f1": 0.9514563106796117,
+              "false_positive_rate": 0.0026455026455026454,
+              "precision": 0.9865771812080537,
+              "recall": 0.91875
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    753,
+                    2
+                  ],
+                  [
+                    13,
+                    147
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9836065573770492,
+                "f1": 0.9514563106796117,
+                "false_positive_rate": 0.0026490066225165563,
+                "precision": 0.9865771812080537,
+                "recall": 0.91875
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.35
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  755,
+                  1
+                ],
+                [
+                  15,
+                  145
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.982532751091703,
+              "f1": 0.9477124183006536,
+              "false_positive_rate": 0.0013227513227513227,
+              "precision": 0.9931506849315068,
+              "recall": 0.90625
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    754,
+                    1
+                  ],
+                  [
+                    15,
+                    145
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9825136612021858,
+                "f1": 0.9477124183006536,
+                "false_positive_rate": 0.0013245033112582781,
+                "precision": 0.9931506849315068,
+                "recall": 0.90625
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.4
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  17,
+                  143
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9814410480349345,
+              "f1": 0.9438943894389439,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.89375
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    17,
+                    143
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9814207650273225,
+                "f1": 0.9438943894389439,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.89375
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.45
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  20,
+                  140
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9781659388646288,
+              "f1": 0.9333333333333333,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.875
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    20,
+                    140
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9781420765027322,
+                "f1": 0.9333333333333333,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.875
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.5
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  24,
+                  136
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9737991266375546,
+              "f1": 0.918918918918919,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.85
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    24,
+                    136
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9737704918032787,
+                "f1": 0.918918918918919,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.85
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.55
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  28,
+                  132
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9694323144104804,
+              "f1": 0.9041095890410958,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.825
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    28,
+                    132
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9693989071038251,
+                "f1": 0.9041095890410958,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.825
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.6
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  28,
+                  132
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9694323144104804,
+              "f1": 0.9041095890410958,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.825
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    28,
+                    132
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9693989071038251,
+                "f1": 0.9041095890410958,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.825
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.65
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  33,
+                  127
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9639737991266376,
+              "f1": 0.8850174216027874,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.79375
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    33,
+                    127
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9639344262295082,
+                "f1": 0.8850174216027874,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.79375
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.7
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  39,
+                  121
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9574235807860262,
+              "f1": 0.8612099644128114,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.75625
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    39,
+                    121
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9573770491803278,
+                "f1": 0.8612099644128114,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.75625
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.75
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  46,
+                  114
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9497816593886463,
+              "f1": 0.8321167883211679,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.7125
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    46,
+                    114
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9497267759562842,
+                "f1": 0.8321167883211679,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.7125
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.8
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  51,
+                  109
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9443231441048034,
+              "f1": 0.8104089219330854,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.68125
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    51,
+                    109
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9442622950819672,
+                "f1": 0.8104089219330854,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.68125
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.85
+        },
+        {
+          "evaluation": {
+            "confusion_matrix": {
+              "labels": [
+                "ham",
+                "spam"
+              ],
+              "matrix": [
+                [
+                  756,
+                  0
+                ],
+                [
+                  56,
+                  104
+                ]
+              ]
+            },
+            "metrics": {
+              "accuracy": 0.9388646288209607,
+              "f1": 0.7878787878787878,
+              "false_positive_rate": 0.0,
+              "precision": 1.0,
+              "recall": 0.65
+            },
+            "operational": {
+              "abstained_count": 1,
+              "abstention_support": {
+                "ham": 1,
+                "spam": 0
+              },
+              "classified_count": 915,
+              "confusion_matrix": {
+                "labels": [
+                  "ham",
+                  "spam"
+                ],
+                "matrix": [
+                  [
+                    755,
+                    0
+                  ],
+                  [
+                    56,
+                    104
+                  ]
+                ]
+              },
+              "coverage": 0.9989082969432315,
+              "metrics": {
+                "accuracy": 0.9387978142076503,
+                "f1": 0.7878787878787878,
+                "false_positive_rate": 0.0,
+                "precision": 1.0,
+                "recall": 0.65
+              },
+              "sample_count": 915,
+              "support": {
+                "ham": 755,
+                "spam": 160
+              },
+              "total_count": 916,
+              "undefined_metrics": {}
+            },
+            "sample_count": 916,
+            "support": {
+              "ham": 756,
+              "spam": 160
+            },
+            "undefined_metrics": {}
+          },
+          "threshold": 0.9
+        }
+      ],
+      "validation": {
+        "confusion_matrix": {
+          "labels": [
+            "ham",
+            "spam"
+          ],
+          "matrix": [
+            [
+              749,
+              7
+            ],
+            [
+              8,
+              152
+            ]
+          ]
+        },
+        "metrics": {
+          "accuracy": 0.9836244541484717,
+          "f1": 0.9529780564263323,
+          "false_positive_rate": 0.009259259259259259,
+          "precision": 0.9559748427672956,
+          "recall": 0.95
+        },
+        "operational": {
+          "abstained_count": 1,
+          "abstention_support": {
+            "ham": 1,
+            "spam": 0
+          },
+          "classified_count": 915,
+          "confusion_matrix": {
+            "labels": [
+              "ham",
+              "spam"
+            ],
+            "matrix": [
+              [
+                748,
+                7
+              ],
+              [
+                8,
+                152
+              ]
+            ]
+          },
+          "coverage": 0.9989082969432315,
+          "metrics": {
+            "accuracy": 0.9836065573770492,
+            "f1": 0.9529780564263323,
+            "false_positive_rate": 0.009271523178807948,
+            "precision": 0.9559748427672956,
+            "recall": 0.95
+          },
+          "sample_count": 915,
+          "support": {
+            "ham": 755,
+            "spam": 160
+          },
+          "total_count": 916,
+          "undefined_metrics": {}
+        },
+        "sample_count": 916,
+        "support": {
+          "ham": 756,
+          "spam": 160
+        },
+        "undefined_metrics": {}
+      }
+    }
+  },
+  "primary_model_id": "naive_bayes",
+  "projection_sha256": "5369346bc6f42da27acea58e7920af05a50007739fe255355503ba16a94fd803",
+  "release_id": "sms-b5d453f438-2226ac7c49-714333",
+  "schema_version": 1,
+  "seed": 42,
+  "selection_partition": "validation",
+  "source_revision": "ecaef22504de55d56231d08160137b8b33537f20",
+  "source_sha256": "b5d453f43839465f6f8a65bc59fe9cd180350d480d77a41e84e34188a8df771f",
+  "split_manifest_sha256": "2226ac7c49f166b01a143b7c549b24db56abe31129d25b166995bfc434be0ae1",
+  "test_evaluation_policy": "Candidates, thresholds, primary selection and clustering are frozen before test evaluation. No training refit or test-based selection occurs."
+}
