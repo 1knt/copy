@@ -62,9 +62,6 @@ def test_text_features_detect_indicators():
     assert features["exclamation_count"] == 1
     plain = text_features("see you later")
     assert not (plain["has_url"] or plain["has_email"] or plain["has_phone"] or plain["has_currency"])
-    assert not plain["has_emoji"] and plain["emoji_count"] == 0
-    decorated = text_features("You won 🎁🎁 claim now 👉🏽 Nokia™")
-    assert decorated["has_emoji"] and decorated["emoji_count"] == 3
 
 
 def test_mendeley_archive_requires_exact_member():

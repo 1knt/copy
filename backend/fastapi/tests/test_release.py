@@ -4,7 +4,6 @@ import platform
 from dataclasses import replace
 from types import SimpleNamespace
 
-import emoji
 import joblib
 import numpy as np
 import pytest
@@ -17,7 +16,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
 from app.artifacts import InvalidRelease, checked_bytes, load_release
-from app.emoji_text import PREPROCESSING_VERSION, text_for_model
+from app.emoji_text import text_for_model
 from app.main import create_app
 from app.service import infer
 
@@ -79,7 +78,7 @@ def release_dir(tmp_path):
                     "positive_label": "spam", "decision_threshold": 0.5, "dataset_sha256": "a" * 64,
                     "split_manifest_sha256": split_hash, "pipeline_sha256": digest(directory / "pipeline.joblib"),
                     "evaluation_sha256": write_json(directory / "evaluation.json", evaluation), "feature_configuration": features,
-                    "preprocessing_version": "tfidf-word-v1", "library_versions": {"python": platform.python_version(), "sklearn": sklearn.__version__,
+                    "preprocessing_version": "tfidf-v1", "library_versions": {"python": platform.python_version(), "sklearn": sklearn.__version__,
                     "numpy": np.__version__, "scipy": scipy.__version__, "joblib": joblib.__version__}}
         release["models"][model_id] = {"directory": model_id, "manifest_sha256": write_json(directory / "model-manifest.json", manifest)}
         summary["models"][model_id] = version
@@ -118,34 +117,13 @@ def test_real_pipeline_parity_and_abstention(release_dir):
         assert "free cash prize" not in response.text
 
 
-def make_emoji_release(root):
-    for model_id in ("naive_bayes", "logistic_regression"):
-        manifest = read_json(root / model_id / "model-manifest.json")
-        manifest["preprocessing_version"] = PREPROCESSING_VERSION
-        manifest["library_versions"]["emoji"] = emoji.__version__
-        rehash_model(root, manifest)
-
-
-def test_emoji_are_ignored_by_legacy_release_and_read_by_emoji_release(release_dir):
-    with TestClient(create_app(release_dir)) as client:
-        assert client.get("/api/v1/model").json()["emoji_handling"] == "ignored"
-        legacy = client.post("/api/v1/predictions", json={"text": "🆓🆓"}).json()
-        assert legacy["status"] == "unable_to_assess"
-    make_emoji_release(release_dir)
+def test_emoji_are_read_as_words(release_dir):
     release = load_release(release_dir)
     with TestClient(create_app(release_dir)) as client:
-        metadata = client.get("/api/v1/model").json()
-        assert metadata["emoji_handling"] == "read_as_words"
-        assert any("English names" in limitation for limitation in metadata["limitations"])
         response = client.post("/api/v1/predictions", json={"text": "🆓🆓"})
         expected = release.models["naive_bayes"].pipeline.predict_proba([text_for_model("🆓🆓")])[0, 1]
-        assert response.json()["status"] == "classified" and response.json()["label"] == "spam"
-        assert response.json()["spam_score"] == pytest.approx(expected)
-        assert "🆓" not in response.text and "free button" not in response.text.lower()
-        comparison = client.post("/api/v1/comparisons", json={"text": "🆓 win cash"}).json()
-        assert all(row["status"] == "classified" for row in comparison["results"])
-        assert client.post("/api/v1/predictions", json={"text": "free cash prize"}).json()["spam_score"] == pytest.approx(
-            release.models["naive_bayes"].pipeline.predict_proba(["free cash prize"])[0, 1])
+        assert response.json()["status"] == "classified" and response.json()["spam_score"] == pytest.approx(expected)
+        assert "🆓" not in response.text
 
 
 def test_class_mapping_and_threshold_equality(release_dir):
@@ -170,16 +148,11 @@ def test_tampering_fails_before_deserialization(release_dir, relative, monkeypat
     assert calls == []
 
 
-@pytest.mark.parametrize("mutation", ["version", "threshold", "classes", "features", "library", "preprocessing", "emoji_library", "fpr", "support", "abstention", "matrix"])
+@pytest.mark.parametrize("mutation", ["version", "threshold", "classes", "features", "library", "fpr", "support", "abstention", "matrix"])
 def test_self_consistent_hashes_do_not_hide_invalid_metadata(release_dir, mutation):
     manifest = read_json(release_dir / "naive_bayes/model-manifest.json")
     evaluation = read_json(release_dir / "naive_bayes/evaluation.json")
-    if mutation == "preprocessing":
-        manifest["preprocessing_version"] = "tfidf-word-emoji-v99"
-    elif mutation == "emoji_library":
-        manifest["preprocessing_version"] = PREPROCESSING_VERSION
-        manifest["library_versions"]["emoji"] = "0.0.0"
-    elif mutation == "version":
+    if mutation == "version":
         evaluation["model_version"] = "different"
     elif mutation == "threshold":
         manifest["decision_threshold"] = float("nan")

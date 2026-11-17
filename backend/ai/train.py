@@ -13,7 +13,6 @@ from sklearn.dummy import DummyClassifier
 
 from ai.clustering import export_clusters, select_clustering
 from ai.data import SEED, save_prepared_data, sha256_bytes, sha256_file, split_records, timestamp, write_json
-from ai.emoji_text import PREPROCESSING_VERSION, library_version as emoji_version, text_for_model
 from ai.experiments import select_classifiers
 from ai.metrics import classification_metrics, evaluate_scores, score_model
 from ai.sources import load_combined
@@ -31,7 +30,7 @@ def source_identity():
 
 
 def versions():
-    return {"python": platform.python_version(), "sklearn": sklearn.__version__, "numpy": np.__version__, "scipy": scipy.__version__, "joblib": joblib.__version__, "emoji": emoji_version()}
+    return {"python": platform.python_version(), "sklearn": sklearn.__version__, "numpy": np.__version__, "scipy": scipy.__version__, "joblib": joblib.__version__}
 
 
 def train_release(output, data_directory, seed=SEED):
@@ -69,7 +68,6 @@ def train_release(output, data_directory, seed=SEED):
         "source_sha256": source_hash,
         "library_versions": versions(),
         "selection_partition": "validation",
-        "preprocessing_version": PREPROCESSING_VERSION,
         "primary_model_id": primary,
         "classification_selection_rule": "At default threshold maximize spam F1, then precision, then fewer vocabulary features, then lower parameter. Tune threshold only on the selected family candidate; break ties by distance to 0.5, then higher threshold. Primary uses tuned validation F1, precision, then naive_bayes.",
         "models": {model_id: {"configuration": model["configuration"], "decision_threshold": model["threshold"], "validation": model["validation"], "threshold_search": model["threshold_search"]} for model_id, model in selected.items()},
@@ -89,7 +87,7 @@ def train_release(output, data_directory, seed=SEED):
     write_json(output / "selection-decision.json", decision)
     decision_hash = sha256_file(output / "selection-decision.json")
     print("Frozen selection-decision.json written; evaluating held-out test data once.", flush=True)
-    test_text = [text_for_model(row["text"]) for row in partitions["test"]]
+    test_text = [row["text"] for row in partitions["test"]]
     test_labels = [row["label"] for row in partitions["test"]]
     dummy = DummyClassifier(strategy="most_frequent")
     dummy.fit(np.zeros((len(partitions["train"]), 1)), [row["label"] for row in partitions["train"]])
@@ -119,8 +117,7 @@ def train_release(output, data_directory, seed=SEED):
             "dataset_sha256": provenance["dataset_sha256"],
             "split_manifest_sha256": split_hash,
             "selection_decision_sha256": decision_hash,
-            "preprocessing_version": PREPROCESSING_VERSION,
-            "text_normalization": "Each emoji is replaced by the word 'emoji' and its English CLDR name (emoji library) before TF-IDF; plain copyright, registered and trade mark signs and all other characters are unchanged.",
+            "preprocessing_version": "tfidf-word-v1",
             "class_labels": [str(label) for label in pipeline.named_steps["classifier"].classes_],
             "positive_label": "spam",
             "decision_threshold": model["threshold"],
@@ -132,11 +129,11 @@ def train_release(output, data_directory, seed=SEED):
             "score_interpretation": "Uncalibrated model score for spam; not a guarantee of correctness or safety.",
             "supported_domain": "English SMS-like messages, including smishing examples from the Mendeley SMS Phishing Dataset",
             "supported_language": "en",
-            "limitations": ["Training data combines historical UCI SMS (2011) with the Mendeley SMS Phishing Dataset (2022); current messages and other languages may differ.", "Spam classification does not detect executable malware or verify links.", "Zero recognized vocabulary features cause abstention.", "Near-duplicate templates may remain after exact normalization deduplication.", "Emoji are read through their English names; the training corpora contain few emoji, so an emoji mostly borrows the weight of the words in its name."],
+            "limitations": ["Training data combines historical UCI SMS (2011) with the Mendeley SMS Phishing Dataset (2022); current messages and other languages may differ.", "Spam classification does not detect executable malware or verify links.", "Zero recognized vocabulary features cause abstention.", "Near-duplicate templates may remain after exact normalization deduplication."],
         }
         write_json(directory / "model-manifest.json", manifest)
         model_registry[model_id] = {"directory": model_id, "manifest_sha256": sha256_file(directory / "model-manifest.json")}
-        summary_scores, summary_classified = score_model(pipeline, [text_for_model(row["text"]) for _, row in flattened])
+        summary_scores, summary_classified = score_model(pipeline, [row["text"] for _, row in flattened])
         all_scores[model_id] = [float(score) if recognized else None for score, recognized in zip(summary_scores, summary_classified, strict=True)]
     summary = {"schema_version": 1, "dataset_id": provenance["dataset_id"], "split_id": split_id, "models": {model_id: f"{release_id}-{model_id}" for model_id in selected}, "rows": [{"sample_id": row["sample_id"], "source_id": row["source_id"], "split": partition, "label": row["label"], "length": len(row["text"]), "scores": {model_id: all_scores[model_id][index] for model_id in selected}} for index, (partition, row) in enumerate(flattened)]}
     write_json(output / "dataset-summary.json", summary)

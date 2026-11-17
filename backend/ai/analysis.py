@@ -11,12 +11,11 @@ from scipy.stats import chi2_contingency, mannwhitneyu
 from sklearn.feature_extraction.text import CountVectorizer
 
 from ai.data import SEED, write_json
-from ai.emoji_text import text_for_model
 from ai.sources import parse_mendeley, read_mendeley_archive, text_features
 
 
 ROOT = Path(__file__).resolve().parents[1]
-INDICATORS = ["has_url", "has_phone", "has_currency", "has_email", "has_emoji"]
+INDICATORS = ["has_url", "has_phone", "has_currency", "has_email"]
 COLORS = {"ham": "#4c72b0", "spam": "#dd8452", "smishing": "#c44e52", "unspecified": "#8c8c8c"}
 
 
@@ -24,9 +23,7 @@ def load_prepared(directory):
     frames = [pd.read_csv(Path(directory) / f"{name}.csv", dtype=str, keep_default_na=False).assign(partition=name) for name in ("train", "validation", "test")]
     data = pd.concat(frames, ignore_index=True)
     features = pd.DataFrame([text_features(text) for text in data["text"]])
-    data = pd.concat([data, features], axis=1)
-    data["model_text"] = data["text"].map(text_for_model)
-    return data
+    return pd.concat([data, features], axis=1)
 
 
 def save(figure, path):
@@ -72,7 +69,7 @@ def plot_indicators(train, figures):
     positions = np.arange(len(INDICATORS))
     for index, group in enumerate(groups):
         axis.bar(positions + index * width, rates.loc[group] * 100, width, label=group, color=COLORS[group])
-    axis.set_xticks(positions + width * (len(groups) - 1) / 2, ["URL", "Phone number", "Currency", "Email", "Emoji"])
+    axis.set_xticks(positions + width * (len(groups) - 1) / 2, ["URL", "Phone number", "Currency", "Email"])
     axis.set_ylabel("Messages containing indicator (%)")
     axis.set_title("Engineered indicator rates by subtype, training partition")
     axis.legend()
@@ -132,8 +129,6 @@ def run(prepared, output):
         "subtype_counts": {name: int(count) for name, count in data["subtype"].value_counts().items()},
         "missing_text": int((data["text"].str.strip() == "").sum()),
         "replacement_character_rows": int((data["replacement_characters"] > 0).sum()),
-        "emoji_rows": {name: int(count) for name, count in data.loc[data["has_emoji"], "subtype"].value_counts().items()},
-        "emoji_total": int(data["emoji_count"].sum()),
         "origin_by_subtype": plot_sources(data, figures),
         "length": plot_lengths(train, figures),
         "indicators": plot_indicators(train, figures),

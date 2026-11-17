@@ -4,7 +4,7 @@ FastAPI serves the frozen English SMS classifiers trained in Assignment 2, toget
 
 ## Setup and launch
 
-The packaged release requires Python 3.14 and the exact scikit-learn, NumPy, SciPy and joblib versions in the requirement files. The loader accepts the same Python major/minor version and verifies the exact four library versions recorded by training, plus the `emoji` library version for releases that read emoji. The environment is shared with the Assignment 2 pipeline; see [the backend guide](../README.md).
+The packaged release requires Python 3.14 and the exact scikit-learn, NumPy, SciPy and joblib versions in the requirement files. The loader accepts the same Python major/minor version and verifies the exact four library versions recorded by training. The environment is shared with the Assignment 2 pipeline; see [the backend guide](../README.md).
 
 From `backend/` on Windows:
 
@@ -61,9 +61,7 @@ Missing credentials, provider authorization/quota failures or network unavailabi
 
 Both external endpoints use the existing error envelope, request ID, JSON content type and body-size boundaries. The API does not persist or log submitted numbers, messages, credentials or provider response bodies. Number-lookup success intentionally echoes each input in its response. Disable proxy/access query and body logging as described above.
 
-### Emoji
-
-Releases trained with `preprocessing_version` `tfidf-word-emoji-v1` read emoji: before vectorizing, the API replaces each emoji with the word `emoji` and its English name (`🎁` becomes `emoji wrapped gift`), using `app/emoji_text.py`, a byte-identical copy of the training module `ai/emoji_text.py`. Releases with `tfidf-word-v1` (the format before emoji support) receive the raw text, so their emoji are ignored as before. Any other preprocessing version, or an emoji release whose recorded `emoji` library version differs from the installed one, fails startup validation. `GET /api/v1/model` reports `emoji_handling` as `read_as_words` or `ignored`. Prediction responses never echo the emoji or their names.
+Before scoring, `app/emoji_text.py` (a copy of `ai/emoji_text.py`) replaces each emoji with its English name, so `🎁` is read as `wrapped gift` instead of being dropped by the tokenizer. Responses never echo the message or its emoji.
 
 `GET /api/v1/model` and `GET /api/v1/evaluation` expose nullable `positive_label`. The loader fills it from the integrity-checked model manifest rather than inferring it from class order or rewriting evaluation artifacts.
 
